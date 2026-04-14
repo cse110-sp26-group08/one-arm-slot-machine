@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Token Tugger 3000</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bungee:wght@400&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section class="hero">
+      <p class="eyebrow">Vanilla HTML + CSS + JavaScript</p>
+      <h1>Token Tugger 3000</h1>
+      <p class="subtitle">
+        A one-armed slot machine where every pull funds the great AI token furnace.
+        Spend tokens. Win tokens. Listen to a smug machine explain why your prompt engineering still needs work.
+      </p>
+    </section>
+
+    <section class="machine" aria-label="AI satire slot machine">
+      <div class="machine-top">
+        <div class="status-card">
+          <span class="label">Wallet</span>
+          <strong id="token-balance" aria-live="polite">120</strong>
+          <span class="tiny-note">human-earned tokens</span>
+        </div>
+        <div class="status-card">
+          <span class="label">Spin Cost</span>
+          <strong id="spin-cost">15</strong>
+          <span class="tiny-note">tokens per bad idea</span>
+        </div>
+        <div class="status-card">
+          <span class="label">Streak</span>
+          <strong id="streak-count">0</strong>
+          <span class="tiny-note">consecutive hallucinations survived</span>
+        </div>
+      </div>
+
+      <div class="reel-board" aria-live="polite" aria-label="Slot machine reels">
+        <div class="reel-window"><span id="reel-1" class="symbol">404</span></div>
+        <div class="reel-window"><span id="reel-2" class="symbol">GPU</span></div>
+        <div class="reel-window"><span id="reel-3" class="symbol">LOL</span></div>
+      </div>
+
+      <div class="controls">
+        <button id="spin-button" class="spin-button" type="button">Pull Lever</button>
+        <button id="reset-button" class="secondary-button" type="button">Refill Wallet</button>
+      </div>
+
+      <div class="meter-wrap">
+        <div class="meter-labels">
+          <span>Inference Heat</span>
+          <span id="heat-readout">Low</span>
+        </div>
+        <div class="heat-meter" aria-hidden="true">
+          <div id="heat-bar" class="heat-bar"></div>
+        </div>
+      </div>
+
+      <section class="message-panel" aria-live="polite">
+        <h2>Machine Commentary</h2>
+        <p id="message-text">
+          Welcome, carbon-based investor. Deposit optimism and see whether the model returns insight or expensive autocomplete.
+        </p>
+      </section>
+
+      <section class="paytable">
+        <h2>Paytable</h2>
+        <ul>
+          <li><span>3x GPU</span><strong>+90 tokens</strong></li>
+          <li><span>3x PROMPT</span><strong>+75 tokens</strong></li>
+          <li><span>3 matching anything</span><strong>+60 tokens</strong></li>
+          <li><span>2 matching anything</span><strong>+25 tokens</strong></li>
+          <li><span>404 appears</span><strong>AI apologizes, no bonus</strong></li>
+        </ul>
+      </section>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
