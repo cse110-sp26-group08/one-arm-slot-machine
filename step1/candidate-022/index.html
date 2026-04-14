@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Token Tug-o-Tron</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="machine-shell">
+    <section class="hero">
+      <p class="eyebrow">Vanilla Web Slot Machine</p>
+      <h1>Token Tug-o-Tron</h1>
+      <p class="tagline">
+        Pull the lever, win fake AI tokens, and immediately burn them on "enterprise intelligence."
+      </p>
+    </section>
+
+    <section class="machine" aria-label="AI token slot machine">
+      <div class="scoreboard">
+        <div class="score-card">
+          <span class="score-label">Wallet</span>
+          <strong id="tokenBalance">120</strong>
+          <span class="score-note">prompt pennies</span>
+        </div>
+        <div class="score-card">
+          <span class="score-label">Spin Cost</span>
+          <strong id="spinCost">15</strong>
+          <span class="score-note">tokens per prophecy</span>
+        </div>
+        <div class="score-card">
+          <span class="score-label">Mood</span>
+          <strong id="aiMood">Smug</strong>
+          <span class="score-note">baseline model confidence</span>
+        </div>
+      </div>
+
+      <div class="reels" role="group" aria-label="Slot machine reels">
+        <div class="reel" id="reel1" aria-live="polite">404</div>
+        <div class="reel" id="reel2" aria-live="polite">GPU</div>
+        <div class="reel" id="reel3" aria-live="polite">LOL</div>
+      </div>
+
+      <div class="controls">
+        <button id="spinButton" class="spin-button" type="button">Pull Lever</button>
+        <button id="autospinButton" class="secondary-button" type="button">Autopilot x3</button>
+      </div>
+
+      <div class="status-panel">
+        <p id="statusMessage" class="status-message">
+          Welcome to the machine. Please deposit your remaining dignity.
+        </p>
+        <div class="meter-wrap" aria-label="AI hype meter">
+          <span>Hype Meter</span>
+          <div class="meter">
+            <div id="hypeBar" class="meter-fill"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="rules">
+      <h2>How this nonsense works</h2>
+      <ul>
+        <li>Each spin costs tokens because apparently "innovation" has overhead.</li>
+        <li>Match symbols to win token refunds, bonuses, or mild emotional damage.</li>
+        <li>Run out of tokens and the machine will beg you to pivot to crypto.</li>
+      </ul>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
