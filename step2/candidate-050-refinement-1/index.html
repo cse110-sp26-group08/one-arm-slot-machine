@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Token Forge</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="shell">
+    <section class="hero">
+      <p class="eyebrow">Candidate 050</p>
+      <h1>Token Forge</h1>
+      <p class="summary">A cleaner slot machine dashboard with clearer results, visible wheel patterns, sound, and faster repeat play.</p>
+    </section>
+
+    <section class="dashboard">
+      <div class="overview-grid">
+        <article class="metric">
+          <span class="metric-label">Starting Tokens</span>
+          <strong id="startingTokensValue">1,000</strong>
+          <small>saved across sessions</small>
+        </article>
+        <article class="metric">
+          <span class="metric-label">Current Tokens</span>
+          <strong id="tokensValue">1,000</strong>
+          <small>available to spend</small>
+        </article>
+        <article class="metric">
+          <span class="metric-label">Spin Cost</span>
+          <strong id="costValue">45</strong>
+          <small>per play</small>
+        </article>
+        <article class="metric">
+          <span class="metric-label">Pressure</span>
+          <strong id="pressureValue">1.0x</strong>
+          <small>payout multiplier</small>
+        </article>
+      </div>
+
+      <div class="content-grid">
+        <section class="machine-panel">
+          <div class="status-line" id="statusLine">Ready to spin.</div>
+
+          <div class="controls-bar">
+            <label class="plays-control" for="playsInput">
+              <span>Plays</span>
+              <input id="playsInput" type="number" min="1" max="10" value="1">
+            </label>
+            <button id="soundButton" class="ghost-button" type="button" aria-pressed="true">Sound: On</button>
+          </div>
+
+          <div class="shaft" aria-label="Slot reels">
+            <div class="drum"><span id="drum0">MODEL</span></div>
+            <div class="drum"><span id="drum1">GPU</span></div>
+            <div class="drum"><span id="drum2">TOKEN</span></div>
+          </div>
+
+          <div class="button-row">
+            <button id="spinButton" class="primary-button" type="button">Play</button>
+            <button id="refineButton" class="secondary-button" type="button">Refine</button>
+            <button id="stashButton" class="secondary-button" type="button">Collect Cache</button>
+            <button id="resetButton" class="secondary-button" type="button">Reset</button>
+          </div>
+
+          <div class="round-grid">
+            <article class="readout">
+              <span>Spent This Round</span>
+              <strong id="spentValue">0</strong>
+            </article>
+            <article class="readout">
+              <span>Gained This Round</span>
+              <strong id="gainedValue">0</strong>
+            </article>
+            <article class="readout">
+              <span>Net This Round</span>
+              <strong id="netValue">0</strong>
+            </article>
+            <article class="readout">
+              <span>Detected Pattern</span>
+              <strong id="patternValue">None</strong>
+            </article>
+          </div>
+
+          <div class="summary-grid">
+            <article class="readout">
+              <span>Cached Tokens</span>
+              <strong id="cacheValue">0</strong>
+            </article>
+            <article class="readout">
+              <span>Combo</span>
+              <strong id="comboValue">0</strong>
+            </article>
+            <article class="readout">
+              <span>Best Payout</span>
+              <strong id="peakValue">0</strong>
+            </article>
+          </div>
+        </section>
+
+        <aside class="sidebar">
+          <section class="panel">
+            <div class="panel-head">
+              <h2>Wheel Patterns</h2>
+              <span>current payouts</span>
+            </div>
+            <div id="patternList" class="pattern-list"></div>
+          </section>
+
+          <section class="panel">
+            <div class="panel-head">
+              <h2>Activity</h2>
+              <span>latest first</span>
+            </div>
+            <ul id="logList" class="log-list" aria-live="polite"></ul>
+          </section>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

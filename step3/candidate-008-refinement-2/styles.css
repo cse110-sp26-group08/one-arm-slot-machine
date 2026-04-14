@@ -1,0 +1,455 @@
+:root {
+  --bg: #081018;
+  --bg-2: #101e2a;
+  --surface: rgba(12, 24, 34, 0.88);
+  --line: rgba(120, 205, 255, 0.22);
+  --line-strong: rgba(251, 191, 36, 0.58);
+  --text: #eff8ff;
+  --muted: #a8bdcc;
+  --mint: #86efac;
+  --aqua: #67e8f9;
+  --gold: #fbbf24;
+  --rose: #fb7185;
+  --ink: #072032;
+  --shadow: rgba(0, 0, 0, 0.42);
+  --radius-lg: 28px;
+  --radius-md: 20px;
+  --radius-sm: 14px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Space Grotesk", sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at top left, rgba(103, 232, 249, 0.16), transparent 24%),
+    radial-gradient(circle at 85% 10%, rgba(251, 191, 36, 0.13), transparent 16%),
+    linear-gradient(155deg, var(--bg), #0c1721 44%, var(--bg-2));
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+  background-size: 34px 34px;
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.9), transparent 92%);
+}
+
+.page-shell {
+  width: min(1080px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: 2rem 0 3rem;
+}
+
+.hero,
+.machine,
+.stat-card,
+.pattern-box,
+.controls-card,
+.status-box,
+.round-card,
+.history-card,
+.details-card,
+.summary-stat {
+  border: 1px solid var(--line);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.02));
+  box-shadow: 0 24px 60px var(--shadow);
+  backdrop-filter: blur(12px);
+}
+
+.hero,
+.machine,
+.details-card {
+  border-radius: var(--radius-lg);
+}
+
+.hero,
+.machine {
+  padding: 1.4rem;
+}
+
+.hero {
+  margin-bottom: 1rem;
+}
+
+.eyebrow,
+.stat-label,
+.mini-label,
+.control-label {
+  margin: 0;
+  font-family: "Chakra Petch", sans-serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--aqua);
+}
+
+.hero h1,
+.section-heading h2 {
+  margin: 0;
+  font-family: "Chakra Petch", sans-serif;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  margin-top: 0.4rem;
+  font-size: clamp(3rem, 9vw, 5.3rem);
+  line-height: 0.92;
+}
+
+.summary,
+.pattern-copy,
+.shop-copy,
+.status-box p,
+.history-table {
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.summary {
+  width: min(40rem, 100%);
+  margin: 0.9rem 0 0;
+  font-size: 1.05rem;
+}
+
+.machine {
+  display: grid;
+  gap: 1rem;
+}
+
+.section-heading {
+  display: grid;
+  gap: 0.25rem;
+}
+
+.section-heading h2 {
+  font-size: clamp(1.4rem, 3vw, 2rem);
+}
+
+.stats-panel,
+.reel-panel,
+.controls-card,
+.round-card,
+.history-card,
+.details-card {
+  display: grid;
+  gap: 1rem;
+}
+
+.stats-grid,
+.round-grid,
+.dashboard {
+  display: grid;
+  gap: 1rem;
+}
+
+.stats-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.stat-card,
+.pattern-box,
+.controls-card,
+.status-box,
+.round-card,
+.history-card,
+.summary-stat {
+  border-radius: var(--radius-md);
+  padding: 1rem 1.1rem;
+}
+
+.stat-card strong {
+  display: block;
+  margin-top: 0.5rem;
+  font-family: "Chakra Petch", sans-serif;
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
+}
+
+.playfield {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1rem;
+}
+
+.reels {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.reel-frame {
+  min-height: 10rem;
+  border-radius: 26px;
+  overflow: hidden;
+  border: 2px solid rgba(251, 191, 36, 0.45);
+  background: linear-gradient(180deg, #f6fbff, #bee8ff);
+  box-shadow: inset 0 14px 24px rgba(0, 0, 0, 0.12);
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+}
+
+.reel-frame.matched {
+  border-color: var(--line-strong);
+  box-shadow:
+    inset 0 14px 24px rgba(0, 0, 0, 0.12),
+    0 0 0 3px rgba(251, 191, 36, 0.18),
+    0 0 28px rgba(251, 191, 36, 0.35);
+  transform: translateY(-4px);
+}
+
+.reel {
+  min-height: 10rem;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  color: var(--ink);
+  font-family: "Chakra Petch", sans-serif;
+  font-size: clamp(1.6rem, 4vw, 2.55rem);
+  font-weight: 700;
+  text-align: center;
+  letter-spacing: 0.05em;
+}
+
+.reel.spinning {
+  animation: reelBlur 120ms linear infinite;
+}
+
+.pattern-title,
+.shop-item,
+.round-value {
+  margin: 0;
+}
+
+.pattern-title {
+  margin-top: 0.35rem;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.controls-card {
+  justify-items: center;
+  text-align: center;
+}
+
+.control-field {
+  display: grid;
+  gap: 0.55rem;
+  width: min(280px, 100%);
+}
+
+.play-select,
+.play-button,
+.stop-button,
+.reset-button {
+  width: 100%;
+  font: inherit;
+  border-radius: 999px;
+  transition: transform 160ms ease, box-shadow 160ms ease, opacity 160ms ease;
+}
+
+.play-select {
+  padding: 0.85rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(4, 12, 18, 0.85);
+  color: var(--text);
+}
+
+.controls-actions {
+  display: grid;
+  gap: 0.75rem;
+  width: min(360px, 100%);
+}
+
+.play-button,
+.stop-button,
+.reset-button {
+  border: 0;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.play-button {
+  padding: 1rem 1.25rem;
+  font-family: "Chakra Petch", sans-serif;
+  font-size: 1.25rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #062230;
+  background: linear-gradient(135deg, #facc15, #67e8f9);
+  box-shadow: 0 16px 30px rgba(103, 232, 249, 0.22);
+}
+
+.stop-button {
+  padding: 0.9rem 1.1rem;
+  color: var(--text);
+  background: rgba(251, 113, 133, 0.16);
+  border: 1px solid rgba(251, 113, 133, 0.38);
+}
+
+.reset-button {
+  padding: 0.9rem 1.1rem;
+  color: var(--text);
+  background: rgba(103, 232, 249, 0.1);
+  border: 1px solid rgba(103, 232, 249, 0.25);
+}
+
+.play-button:hover,
+.stop-button:hover,
+.reset-button:hover {
+  transform: translateY(-2px);
+}
+
+.play-button:disabled,
+.stop-button:disabled,
+.reset-button:disabled,
+.play-select:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.status-box {
+  min-height: 4.6rem;
+  display: grid;
+  align-items: center;
+}
+
+.status-box p {
+  margin: 0;
+}
+
+.dashboard {
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.5fr);
+  align-items: start;
+}
+
+.round-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.summary-stat {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+}
+
+.round-value {
+  margin-top: 0.3rem;
+  font-family: "Chakra Petch", sans-serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.gain {
+  color: var(--mint);
+}
+
+.loss {
+  color: var(--rose);
+}
+
+.history-table-wrap {
+  overflow-x: auto;
+}
+
+.history-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.history-table th,
+.history-table td {
+  padding: 0.8rem 0.7rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  text-align: left;
+}
+
+.history-table th {
+  font-family: "Chakra Petch", sans-serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--aqua);
+}
+
+.details-card {
+  overflow: hidden;
+}
+
+.details-card summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 1rem 1.1rem;
+  font-family: "Chakra Petch", sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.details-card summary::-webkit-details-marker {
+  display: none;
+}
+
+.details-body {
+  padding: 0 1.1rem 1.1rem;
+}
+
+.shop-item {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.shop-copy {
+  margin: 0.55rem 0 0;
+}
+
+.machine.celebrate {
+  animation: celebrate 420ms ease;
+}
+
+@keyframes reelBlur {
+  0% { transform: translateY(-2px); opacity: 0.7; }
+  50% { transform: translateY(3px); opacity: 0.95; }
+  100% { transform: translateY(-2px); opacity: 0.7; }
+}
+
+@keyframes celebrate {
+  0% { box-shadow: 0 24px 60px var(--shadow); }
+  50% { box-shadow: 0 28px 90px rgba(103, 232, 249, 0.32); }
+  100% { box-shadow: 0 24px 60px var(--shadow); }
+}
+
+@media (max-width: 900px) {
+  .stats-grid,
+  .dashboard {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .page-shell {
+    width: min(100% - 1rem, 100%);
+  }
+
+  .stats-grid,
+  .reels,
+  .round-grid,
+  .dashboard {
+    grid-template-columns: 1fr;
+  }
+
+  .reel,
+  .reel-frame {
+    min-height: 7.5rem;
+  }
+}
