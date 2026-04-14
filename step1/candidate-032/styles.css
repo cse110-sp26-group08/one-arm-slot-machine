@@ -1,0 +1,220 @@
+:root {
+  --bg: #f4eadb;
+  --panel: rgba(94, 32, 14, 0.9);
+  --panel-soft: rgba(255, 246, 224, 0.84);
+  --ink: #2d160d;
+  --accent: #ff7a00;
+  --accent-2: #ffd166;
+  --good: #1f8a4c;
+  --bad: #8a1f35;
+  --shadow: rgba(45, 22, 13, 0.22);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "IBM Plex Mono", monospace;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at top, rgba(255, 209, 102, 0.75), transparent 30%),
+    linear-gradient(180deg, #fff5d6 0%, #f7d7aa 48%, #efb97c 100%);
+}
+
+.app-shell {
+  width: min(960px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: 2rem 0 3rem;
+}
+
+.hero {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.eyebrow {
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+h1,
+h2 {
+  font-family: "Abril Fatface", serif;
+  font-weight: 400;
+  line-height: 1.05;
+  margin: 0;
+}
+
+h1 {
+  font-size: clamp(2.8rem, 7vw, 5rem);
+  text-shadow: 0 3px 0 rgba(255, 255, 255, 0.5);
+}
+
+.tagline {
+  max-width: 48rem;
+  margin: 1rem auto 0;
+  font-size: 1rem;
+}
+
+.machine {
+  background: linear-gradient(180deg, #7b2d17 0%, #542012 100%);
+  color: #fff7ea;
+  border-radius: 28px;
+  padding: 1.5rem;
+  box-shadow:
+    0 20px 40px var(--shadow),
+    inset 0 2px 0 rgba(255, 255, 255, 0.2);
+  border: 4px solid rgba(255, 209, 102, 0.8);
+}
+
+.status-bar {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.stat-card {
+  background: var(--panel-soft);
+  color: var(--ink);
+  border-radius: 18px;
+  padding: 0.9rem 1rem;
+  text-align: center;
+}
+
+.stat-label {
+  display: block;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.35rem;
+}
+
+.stat-card strong {
+  font-size: clamp(1.3rem, 4vw, 2rem);
+}
+
+.reels {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin: 1rem 0 1.5rem;
+}
+
+.reel {
+  min-height: 8.5rem;
+  display: grid;
+  place-items: center;
+  background:
+    linear-gradient(180deg, rgba(255, 247, 234, 0.85), rgba(255, 225, 178, 0.95));
+  color: var(--ink);
+  border-radius: 22px;
+  border: 3px solid rgba(255, 209, 102, 0.9);
+  font-size: clamp(1.7rem, 5vw, 2.7rem);
+  font-weight: 700;
+  box-shadow: inset 0 -8px 18px rgba(123, 45, 23, 0.15);
+  transform: translateY(0);
+  transition: transform 180ms ease, filter 180ms ease;
+}
+
+.reel.spinning {
+  transform: translateY(-4px) scale(1.02);
+  filter: blur(1.4px);
+}
+
+.controls {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+button {
+  border: 0;
+  border-radius: 999px;
+  padding: 0.95rem 1.4rem;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  color: var(--ink);
+  background: linear-gradient(180deg, #ffd166 0%, #ffb347 100%);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.18);
+  transition: transform 120ms ease, box-shadow 120ms ease, opacity 120ms ease;
+}
+
+button:hover {
+  transform: translateY(-1px);
+}
+
+button:active {
+  transform: translateY(2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.18);
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+button.secondary {
+  background: linear-gradient(180deg, #fff7ea 0%, #e7d2bc 100%);
+}
+
+.message {
+  min-height: 3.5rem;
+  margin: 1.25rem 0 0;
+  padding: 1rem;
+  border-radius: 16px;
+  background: rgba(255, 247, 234, 0.12);
+  line-height: 1.5;
+}
+
+.message.win {
+  background: rgba(31, 138, 76, 0.22);
+}
+
+.message.lose {
+  background: rgba(138, 31, 53, 0.22);
+}
+
+.paytable {
+  margin-top: 1.5rem;
+  background: rgba(255, 247, 234, 0.1);
+  border-radius: 20px;
+  padding: 1.25rem;
+}
+
+.paytable h2 {
+  margin-bottom: 0.8rem;
+  font-size: 1.8rem;
+}
+
+.paytable ul {
+  margin: 0;
+  padding-left: 1.2rem;
+  line-height: 1.7;
+}
+
+@media (max-width: 700px) {
+  .status-bar,
+  .reels {
+    grid-template-columns: 1fr;
+  }
+
+  .reel {
+    min-height: 6.5rem;
+  }
+
+  .controls {
+    flex-direction: column;
+  }
+
+  button {
+    width: 100%;
+  }
+}
