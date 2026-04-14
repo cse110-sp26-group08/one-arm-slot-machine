@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Token Tug-O-War</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section class="hero-card">
+      <p class="eyebrow">Silicon Valley's saddest casino</p>
+      <h1>Win tokens. Feed the AI.</h1>
+      <p class="intro">
+        Pull the lever, earn shiny fake tokens, and immediately burn them on the world's most overconfident autocomplete engine.
+      </p>
+
+      <div class="status-grid">
+        <article class="stat-panel">
+          <span class="stat-label">Your Tokens</span>
+          <strong id="tokenCount">120</strong>
+        </article>
+        <article class="stat-panel">
+          <span class="stat-label">Spin Cost</span>
+          <strong id="spinCost">15</strong>
+        </article>
+        <article class="stat-panel">
+          <span class="stat-label">Last Result</span>
+          <strong id="resultLabel">Waiting for hype</strong>
+        </article>
+      </div>
+
+      <div class="machine-wrap">
+        <div class="marquee-lights" aria-hidden="true"></div>
+        <section class="slot-machine" aria-label="Token slot machine">
+          <div class="machine-top">
+            <div class="screen">
+              <p id="tauntLine">The model promises it can definitely do your taxes.</p>
+            </div>
+            <button id="spinButton" class="spin-button" type="button">Spin The Hype Cycle</button>
+          </div>
+
+          <div class="reels" aria-live="polite">
+            <div class="reel" id="reel1">🤖</div>
+            <div class="reel" id="reel2">🪙</div>
+            <div class="reel" id="reel3">🔥</div>
+          </div>
+
+          <div class="legend">
+            <div><span>🤖</span> Hallucination Engine</div>
+            <div><span>🪙</span> Investor Token</div>
+            <div><span>🔥</span> GPU Bonfire</div>
+            <div><span>🧠</span> Synthetic Genius</div>
+            <div><span>📉</span> Ethics Slide Deck</div>
+            <div><span>🥴</span> Prompt Goblin</div>
+          </div>
+        </section>
+      </div>
+
+      <section class="events-card">
+        <div class="events-header">
+          <h2>Expense Report</h2>
+          <button id="resetButton" class="ghost-button" type="button">Reset Tokens</button>
+        </div>
+        <ul id="logList" class="log-list" aria-live="polite"></ul>
+      </section>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
