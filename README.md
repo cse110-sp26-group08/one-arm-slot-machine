@@ -1,5 +1,7 @@
 # one-arm-slot-machine
 
+<img src="./team-logo.png" width="400" alt="Go Team Seven Ate Nine">
+
 [View Assignment Website](https://cse110-sp26-group08.github.io/one-arm-slot-machine/)
 
 ## About This Experiment
