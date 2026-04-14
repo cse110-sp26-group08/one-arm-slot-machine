@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Token Burn Casino</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=IBM+Plex+Mono:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hero">
+        <p class="eyebrow">100% organic platform APIs. 0% venture capital.</p>
+        <h1>Token Burn Casino</h1>
+        <p class="tagline">
+          Spin the reels, hoard fake AI tokens, and immediately waste them on
+          "premium intelligence."
+        </p>
+      </section>
+
+      <section class="machine" aria-label="AI token slot machine">
+        <div class="status-grid">
+          <article class="status-card">
+            <span class="status-label">Wallet</span>
+            <strong id="tokenCount" class="status-value">120</strong>
+            <span class="status-note">Prompt credits remaining</span>
+          </article>
+          <article class="status-card">
+            <span class="status-label">Spin Cost</span>
+            <strong class="status-value">15</strong>
+            <span class="status-note">Charged in non-refundable vibes</span>
+          </article>
+          <article class="status-card">
+            <span class="status-label">Last Payout</span>
+            <strong id="lastWin" class="status-value">0</strong>
+            <span class="status-note">Tokens recovered from the hype cycle</span>
+          </article>
+        </div>
+
+        <div class="reels-frame">
+          <div class="marquee" aria-hidden="true">
+            <span>LIMITED TIME OFFER: UPGRADE TO SENTIENCE PRO MAX ULTRA</span>
+          </div>
+          <div class="reels" role="img" aria-label="Slot machine reels">
+            <div class="reel" id="reel0">hallucination</div>
+            <div class="reel" id="reel1">synergy</div>
+            <div class="reel" id="reel2">slop</div>
+          </div>
+        </div>
+
+        <div class="controls">
+          <button id="spinButton" class="spin-button" type="button">
+            Spin for 15 tokens
+          </button>
+          <button id="resetButton" class="ghost-button" type="button">
+            Bail out the startup
+          </button>
+        </div>
+
+        <p id="message" class="message" aria-live="polite">
+          Welcome, valued benchmark. Please convert your dignity into tokens.
+        </p>
+
+        <section class="storefront" aria-label="Token spending panel">
+          <div class="store-copy">
+            <p class="store-title">Spend your winnings instantly</p>
+            <p class="store-text">
+              Every spin funds a new AI product idea that absolutely should have
+              remained a napkin sketch.
+            </p>
+          </div>
+          <div class="shop-items" id="shopItems"></div>
+        </section>
+      </section>
+    </main>
+
+    <template id="shopItemTemplate">
+      <button class="shop-item" type="button">
+        <span class="shop-name"></span>
+        <span class="shop-cost"></span>
+      </button>
+    </template>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -33,11 +33,11 @@
 | candidate-031 |2026-04-13T17:24:37Z|gpt-5.4|41|23k-41|23k|5:25 pm pt|2:56|3 |538 | Yes| Has the working necessities, plus some bonus features like payout table| Has extra lines of code that are not needed|
 | candidate-032 |2026-04-13T17:28:36Z|gpt-5.4|41|18k-41|18k|5:28 pm pt|2:13|3 |431 | Yes| Very similar to candidate 30| Simple code with no flashy elements|
 | candidate-033 |2026-04-13T17:31:36Z|gpt-5.4|41|20k-41|20k|5:31 pm pt|2:47|3 |504 | Yes| Doesn't have much change functionality wise| Good CSS|
-| candidate-034 | | | | | | | | | | | | |
-| candidate-035 | | | | | | | | | | | | |
-| candidate-036 | | | | | | | | | | | | |
-| candidate-037 | | | | | | | | | | | | |
-| candidate-038 | | | | | | | | | | | | |
+| candidate-034 |2026-04-13T17:04:29Z| gpt-5.4 |41| 18k-41 |18k| 2m 16s| 2m 16s | 3| 607|yes|Personally the UI was not to my standards, but the colors chosen were decent |acceptable code|
+| candidate-035 |2026-04-13T17:17:29Z |gpt-5.4 |41|23k-41|23k|1m 53s|1m 53s|3|482 |yes|The UI is neat, but results were not very visible|code was acceptable|
+| candidate-036 |2026-04-13T17:34:29Z|gpt-5.4|41|24k-41|24k|1m 57s|1m 57s |1|628|yes|The UI is messy and confusing |It put all code into one folder|
+| candidate-037 |2026-04-13T17:41:29Z|gpt-5.4|41|28k-41|28k|2m 1s|2m 1s|3|581|yes|The UI is simple and decent, but did not like color choice|code was acceptable|
+| candidate-038 |2026-04-13T17:49:29Z|gpt-5.4|41|22k-41|22k|1m 54s|1m 54s|3|577|yes|The app design is neat, shows recent spins|code quality is acceptable|
 | candidate-039 | | | | | | | | | | | | |
 | candidate-040 | | | | | | | | | | | | |
 | candidate-041 | | | | | | | | | | | | |

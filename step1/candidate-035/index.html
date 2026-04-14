@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Token Tugboat Casino</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section class="hero-card">
+      <p class="eyebrow">Vanilla HTML + CSS + JS</p>
+      <h1>Token Tugboat Casino</h1>
+      <p class="subtitle">
+        Spin the reels, farm imaginary AI tokens, and immediately burn them on suspiciously premium features.
+      </p>
+    </section>
+
+    <section class="machine-card" aria-label="Slot machine game">
+      <div class="top-bar">
+        <div class="stat">
+          <span class="stat-label">Token Balance</span>
+          <strong id="token-balance">25</strong>
+        </div>
+        <div class="stat">
+          <span class="stat-label">Cost Per Spin</span>
+          <strong>3</strong>
+        </div>
+        <div class="stat">
+          <span class="stat-label">Jackpot</span>
+          <strong>15</strong>
+        </div>
+      </div>
+
+      <div class="machine-frame">
+        <div class="reel-strip" aria-live="polite">
+          <div class="reel" id="reel-1">🤖</div>
+          <div class="reel" id="reel-2">🪙</div>
+          <div class="reel" id="reel-3">🔥</div>
+        </div>
+        <div class="payline"></div>
+      </div>
+
+      <div class="controls">
+        <button id="spin-button" class="spin-button">Spin For Tokens</button>
+        <button id="upgrade-button" class="upgrade-button">Buy Dubious Upgrade</button>
+      </div>
+
+      <p id="message" class="message">
+        Welcome back, valued power user. Your free trial optimism has been restored.
+      </p>
+
+      <section class="payouts" aria-label="Payout guide">
+        <h2>What Pays Out</h2>
+        <ul>
+          <li><span>🪙 🪙 🪙</span><strong>+15 tokens</strong></li>
+          <li><span>🤖 🤖 🤖</span><strong>+12 tokens</strong></li>
+          <li><span>⚡ ⚡ ⚡</span><strong>+10 tokens</strong></li>
+          <li><span>Any pair</span><strong>+5 tokens</strong></li>
+          <li><span>🔥 anywhere</span><strong>-2 extra tokens</strong></li>
+        </ul>
+      </section>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
