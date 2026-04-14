@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Token Sink 3000</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="marquee" aria-label="Announcement">
+        <p>
+          Welcome to Token Sink 3000: the only casino where you feed AI tokens
+          into a machine and hope it says something useful back.
+        </p>
+      </section>
+
+      <section class="machine" aria-labelledby="title">
+        <div class="machine__top">
+          <div>
+            <p class="eyebrow">Vanilla Web Slot Machine</p>
+            <h1 id="title">Token Sink 3000</h1>
+            <p class="subtitle">
+              Spin for glory, lose for “model improvement,” and try not to get
+              rugged by autocomplete.
+            </p>
+          </div>
+          <button class="help-button" id="help-button" type="button">
+            How this scam works
+          </button>
+        </div>
+
+        <section class="scoreboard" aria-label="Game stats">
+          <article class="panel">
+            <p class="panel__label">Tokens</p>
+            <p class="panel__value" id="token-count">25</p>
+          </article>
+          <article class="panel">
+            <p class="panel__label">Spin Cost</p>
+            <p class="panel__value">3</p>
+          </article>
+          <article class="panel">
+            <p class="panel__label">Mood</p>
+            <p class="panel__value panel__value--small" id="machine-mood">
+              Smug
+            </p>
+          </article>
+        </section>
+
+        <section class="reels" aria-label="Slot machine reels">
+          <div class="reel-window"><div class="reel" id="reel-1">404</div></div>
+          <div class="reel-window"><div class="reel" id="reel-2">BOT</div></div>
+          <div class="reel-window"><div class="reel" id="reel-3">LOL</div></div>
+        </section>
+
+        <section class="controls" aria-label="Game controls">
+          <button class="spin-button" id="spin-button" type="button">
+            Spend 3 Tokens
+          </button>
+          <button class="secondary-button" id="reset-button" type="button">
+            Reset Wallet
+          </button>
+        </section>
+
+        <section class="result-card" aria-live="polite">
+          <p class="result-card__headline">Latest verdict</p>
+          <p class="result-card__message" id="result-message">
+            Insert tokens and hope the machine hallucinates prosperity.
+          </p>
+        </section>
+
+        <section class="paytable" aria-labelledby="paytable-title">
+          <div class="paytable__header">
+            <h2 id="paytable-title">Payouts</h2>
+            <p>Yes, the machine wrote these rules itself.</p>
+          </div>
+          <ul class="paytable__list">
+            <li><span>3x WIN</span><strong>+15 tokens</strong></li>
+            <li><span>3x GPT</span><strong>+12 tokens</strong></li>
+            <li><span>3x LOL</span><strong>+10 tokens</strong></li>
+            <li><span>Any pair</span><strong>+4 tokens</strong></li>
+            <li><span>No match</span><strong>0 tokens and emotional damage</strong></li>
+          </ul>
+        </section>
+      </section>
+    </main>
+
+    <dialog class="help-dialog" id="help-dialog">
+      <form method="dialog" class="help-dialog__card">
+        <h2>Why are there tokens?</h2>
+        <p>
+          Because every AI product eventually invents fake money and asks you to
+          feel excited about spending it.
+        </p>
+        <p>
+          You start with 25 tokens. Each spin costs 3. Match symbols to win
+          tokens back and watch the machine roast the entire ecosystem.
+        </p>
+        <button class="secondary-button" type="submit">Close</button>
+      </form>
+    </dialog>
+
+    <script src="script.js"></script>
+  </body>
+</html>

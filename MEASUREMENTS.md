@@ -29,24 +29,24 @@
 | candidate-027 | | | | | | | | | | | | |
 | candidate-028 | | | | | | | | | | | | |
 | candidate-029 | | | | | | | | | | | | |
-| candidate-030 |2026-04-13T17:18:52Z|gpt-5.4|41|21k-41|21k|5:18 pm pt|2:35|3 |459 | Yes| Has the working necessities,| Has very basic code|
-| candidate-031 |2026-04-13T17:24:37Z|gpt-5.4|41|23k-41|23k|5:25 pm pt|2:56|3 |538 | Yes| Has the working necessities, plus some bonus features like payout table| Has extra lines of code that are not needed|
-| candidate-032 |2026-04-13T17:28:36Z|gpt-5.4|41|18k-41|18k|5:28 pm pt|2:13|3 |431 | Yes| Very similar to candidate 30| Simple code with no flashy elements|
-| candidate-033 |2026-04-13T17:31:36Z|gpt-5.4|41|20k-41|20k|5:31 pm pt|2:47|3 |504 | Yes| Doesn't have much change functionality wise| Good CSS|
-| candidate-034 |2026-04-13T17:04:29Z| gpt-5.4 |41| 18k-41 |18k| 2m 16s| 2m 16s | 3| 607|yes|Personally the UI was not to my standards, but the colors chosen were decent |acceptable code|
-| candidate-035 |2026-04-13T17:17:29Z |gpt-5.4 |41|23k-41|23k|1m 53s|1m 53s|3|482 |yes|The UI is neat, but results were not very visible|code was acceptable|
-| candidate-036 |2026-04-13T17:34:29Z|gpt-5.4|41|24k-41|24k|1m 57s|1m 57s |1|628|yes|The UI is messy and confusing |It put all code into one folder|
-| candidate-037 |2026-04-13T17:41:29Z|gpt-5.4|41|28k-41|28k|2m 1s|2m 1s|3|581|yes|The UI is simple and decent, but did not like color choice|code was acceptable|
-| candidate-038 |2026-04-13T17:49:29Z|gpt-5.4|41|22k-41|22k|1m 54s|1m 54s|3|577|yes|The app design is neat, shows recent spins|code quality is acceptable|
-| candidate-039 | | | | | | | | | | | | |
-| candidate-040 | | | | | | | | | | | | |
-| candidate-041 | | | | | | | | | | | | |
-| candidate-042 | | | | | | | | | | | | |
-| candidate-043 | | | | | | | | | | | | |
-| candidate-044 | 2026-4-13T16:39:24Z| gpt-5.4| 41| 24k-41| 24k| 2:21| 2:22| 4| 585| yes| everthing works| acceptable|
-| candidate-045 | 2026-4-13T16:42:36Z| gpt-5.4| 41| 29k-41| 29k| 2:30| 2:29| 4| 633| yes| everthing works| acceptable|
-| candidate-046 | 2026-4-13T17:04:18Z| gpt-5.4| 41| 27k-41| 27k| 2:12| 2:15| 4| 697| yes| everthing works| acceptable|
-| candidate-047 | 2026-4-13T17:07:43Z| gpt-5.4| 41| 27k-41| 27k| 2:46| 2:45| 4| 723| yes| everthing works| acceptable|
+| candidate-030 | | | | | | | | | | | | |
+| candidate-031 | | | | | | | | | | | | |
+| candidate-032 | | | | | | | | | | | | |
+| candidate-033 | | | | | | | | | | | | |
+| candidate-034 | | | | | | | | | | | | |
+| candidate-035 | | | | | | | | | | | | |
+| candidate-036 | | | | | | | | | | | | |
+| candidate-037 | | | | | | | | | | | | |
+| candidate-038 | | | | | | | | | | | | |
+|candidate-039|2026.04.13-17.13|gpt 5.4|41|23k|23k|5:13 pm pt|3:13s|index.html	script.js	styles.css|567|yes|generic, but good quality|good code, modular, and no magic numbers|
+|candidate-040|2026.04.13-17.35|gpt 5.4|41|22k|22k|5:35|1:59s|index.html	script.js	styles.css|557|yes|everything works fine okay quality|good code, modular, and no magic numbers|
+|candidate-041|2026.04.13-17.41|gpt 5.4|41|22k|22k|5:41|1:39|index.html	script.js	style.css|561|yes|no quality issues|good code, modular, and no magic numbers|
+|candidate-042|2026.04.13-17.53|gpt 5.4|41|23k|23k|23k|23k|5:53|1:47|index.html	script.js	style.css|510|yes|generic, but good quality|good code, modular, and no magic numbers|
+|candidate-043|2026.04.13-17.57|gpt 5.4|41|21k|21k|5:57|2:04s|index.html	script.js	style.css|607|yes|everything seems to work fine, no quality issues|good code, modular, and no magic numbers|
+| candidate-044 | | | | | | | | | | | | |
+| candidate-045 | | | | | | | | | | | | |
+| candidate-046 | | | | | | | | | | | | |
+| candidate-047 | | | | | | | | | | | | |
 | candidate-048 | | | | | | | | | | | | |
 | candidate-049 | | | | | | | | | | | | |
 | candidate-050 | | | | | | | | | | | | |

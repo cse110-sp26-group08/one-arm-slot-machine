@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Token-Spinner 3000</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Bungee:wght@400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hero">
+        <p class="eyebrow">Vanilla Web Slot Machine</p>
+        <h1>Token-Spinner 3000</h1>
+        <p class="tagline">
+          Harvest premium AI tokens, then immediately burn them on vibes, jargon,
+          and statistically suspicious “reasoning upgrades.”
+        </p>
+      </section>
+
+      <section class="machine" aria-labelledby="slot-title">
+        <div class="machine-top">
+          <div>
+            <p class="label">Model Mood</p>
+            <p id="machine-status" class="status-text" aria-live="polite">
+              Idle. The robots are pretending to think.
+            </p>
+          </div>
+          <div class="scoreboard" aria-label="Token counters">
+            <div class="score-card">
+              <span class="label">Tokens</span>
+              <strong id="token-balance">25</strong>
+            </div>
+            <div class="score-card">
+              <span class="label">Last Win</span>
+              <strong id="last-payout">0</strong>
+            </div>
+          </div>
+        </div>
+
+        <h2 id="slot-title" class="visually-hidden">Slot machine reels</h2>
+
+        <div class="reels" role="group" aria-label="Three slot reels">
+          <div class="reel-window">
+            <div class="reel-symbol" id="reel-1" aria-live="polite">Prompt</div>
+          </div>
+          <div class="reel-window">
+            <div class="reel-symbol" id="reel-2" aria-live="polite">Lag</div>
+          </div>
+          <div class="reel-window">
+            <div class="reel-symbol" id="reel-3" aria-live="polite">Token</div>
+          </div>
+        </div>
+
+        <div class="controls">
+          <button id="spin-button" class="spin-button" type="button">
+            Spend 3 Tokens
+          </button>
+          <button id="reset-button" class="ghost-button" type="button">
+            Reboot the Hype
+          </button>
+        </div>
+
+        <p id="result-message" class="result-message" aria-live="polite">
+          Pull the lever and see whether the AI gives you wisdom or expensive nonsense.
+        </p>
+      </section>
+
+      <section class="payouts" aria-labelledby="payouts-title">
+        <div class="panel-heading">
+          <p class="eyebrow">Reward Table</p>
+          <h2 id="payouts-title">Totally Serious Tokenomics</h2>
+        </div>
+        <ul class="pay-table">
+          <li><span>Three Tokens</span><strong>+18</strong></li>
+          <li><span>Three Prompts</span><strong>+12</strong></li>
+          <li><span>Three Hallucinations</span><strong>+2 and a warning</strong></li>
+          <li><span>Any two matching symbols</span><strong>+5</strong></li>
+          <li><span>Three different buzzwords</span><strong>0, but amazing investor energy</strong></li>
+        </ul>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
