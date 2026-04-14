@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Token-Powered AI Slot Machine</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Bricolage+Grotesque:wght@600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="machine-shell">
+    <section class="hero">
+      <p class="eyebrow">AGENTIC GAMBLING SIMULATOR</p>
+      <h1>Burn Tokens.<br>Manifest Vibes.</h1>
+      <p class="tagline">
+        Spin the reels, win more tokens, and watch a fake AI product roast itself in real time.
+      </p>
+    </section>
+
+    <section class="machine" aria-label="AI slot machine">
+      <div class="stats">
+        <article class="stat-card">
+          <span class="stat-label">Token Balance</span>
+          <strong class="stat-value" id="token-count">120</strong>
+        </article>
+        <article class="stat-card">
+          <span class="stat-label">Spin Cost</span>
+          <strong class="stat-value">15</strong>
+        </article>
+        <article class="stat-card">
+          <span class="stat-label">Jackpot</span>
+          <strong class="stat-value">90</strong>
+        </article>
+      </div>
+
+      <div class="reels-frame">
+        <div class="reels" aria-live="polite" aria-label="slot reels">
+          <div class="reel" id="reel-1">🤖</div>
+          <div class="reel" id="reel-2">🪙</div>
+          <div class="reel" id="reel-3">📉</div>
+        </div>
+      </div>
+
+      <div class="controls">
+        <button id="spin-button" class="spin-button" type="button">Spin 15 Tokens</button>
+        <button id="reset-button" class="ghost-button" type="button">Reset Wallet</button>
+      </div>
+
+      <section class="result-panel">
+        <p class="result-line" id="result-line">Welcome to the only casino powered by hype cycles.</p>
+        <p class="snark-line" id="snark-line">Three reels. Infinite confidence. Questionable benchmarks.</p>
+      </section>
+
+      <section class="paytable" aria-label="payout guide">
+        <div class="pay-row">
+          <span>🪙 🪙 🪙</span>
+          <span>+90 tokens</span>
+        </div>
+        <div class="pay-row">
+          <span>🤖 🤖 🤖</span>
+          <span>+60 tokens</span>
+        </div>
+        <div class="pay-row">
+          <span>🔥 🔥 🔥</span>
+          <span>+45 tokens</span>
+        </div>
+        <div class="pay-row">
+          <span>Any pair</span>
+          <span>+20 tokens</span>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

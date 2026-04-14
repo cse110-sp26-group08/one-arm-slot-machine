@@ -25,10 +25,10 @@
 | candidate-023 | 2026-04-13T17:43:33Z| GPT-5.4 Low| 46| 4217| 23k| 2:22| 1:56| 3| 589| yes| meh, least refined so far| similar to first|
 | candidate-024 | 2026-04-13T17:51:47Z| GPT-5.4 Low| 46| 3578| 22k| 2:04| 1:44| 3| 476| yes| moderate, best ui so far| unsure|
 | candidate-025 | 2026-04-13T17:57:11Z| GPT-5.4 Low| 46| 3706| 24k| 2:35| 1:52| 3| 482| yes| meh, text instead of images, less details on site| unsure|
-| candidate-026 | | | | | | | | | | | | |
-| candidate-027 | | | | | | | | | | | | |
-| candidate-028 | | | | | | | | | | | | |
-| candidate-029 | | | | | | | | | | | | |
+| candidate-026 | 2026-04-13T21:35:22Z| gpt-5.4| 41| 27k| 27k| 9:37| 1:56| 3| 482| yes| Overall, looks decent but color scheme is a little lacking and a lot of text that feels unecessary| Looks pretty decent. Didn't notice any glaring problems.|
+| candidate-027 | 2026-04-13T21:50:34Z| gpt-5.4| 41| 23k| 23k| 9:50| 1:54| 3| 623| yes| Completely filled with text, even the spinners. Also confusing how to earn tokens. Not consistent| Looks pretty decent. Didn't notice any glaring problems like the last one|
+| candidate-028 | 2026-04-13T21:59:26Z| gpt-5.4| 41| 21k| 21k| 9:59| 1:30| 3| 520| yes| Still a lotof text. But the best looking visuals and color scheme of all the ones I've seen so far.| Looks pretty decent. Didn't notice any glaring problems like the last one|
+| candidate-029 | 2026-04-13T22:04:53Z| gpt-5.4| 41| 20k| 20k| 10:04| 1:32| 3| 454| yes| Looks pretty good. A lot less text and a pretty decent color scheme| Looks pretty good. Overall pretty well structured code.|
 | candidate-030 |2026-04-13T17:18:52Z|gpt-5.4|41|21k-41|21k|5:18 pm pt|2:35|3 |459 | Yes| Has the working necessities,| Has very basic code|
 | candidate-031 |2026-04-13T17:24:37Z|gpt-5.4|41|23k-41|23k|5:25 pm pt|2:56|3 |538 | Yes| Has the working necessities, plus some bonus features like payout table| Has extra lines of code that are not needed|
 | candidate-032 |2026-04-13T17:28:36Z|gpt-5.4|41|18k-41|18k|5:28 pm pt|2:13|3 |431 | Yes| Very similar to candidate 30| Simple code with no flashy elements|

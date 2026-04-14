@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Token Funnel 3000</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section class="hero-card">
+      <p class="eyebrow">Vanilla HTML + CSS + JS</p>
+      <h1>Token Funnel 3000</h1>
+      <p class="tagline">Spin the reels. Win imaginary AI tokens. Spend them immediately on premium nonsense.</p>
+
+      <div class="machine">
+        <div class="status-bar">
+          <div class="metric">
+            <span class="metric-label">Wallet</span>
+            <strong id="token-count">120</strong>
+          </div>
+          <div class="metric">
+            <span class="metric-label">Bet</span>
+            <strong><span id="bet-amount">15</span> tokens</strong>
+          </div>
+          <div class="metric">
+            <span class="metric-label">Mood</span>
+            <strong id="machine-mood">Confidently hallucinating</strong>
+          </div>
+        </div>
+
+        <div class="reels-frame" aria-label="Slot machine reels">
+          <div class="reel" id="reel-0" aria-live="polite">Prompt Leak</div>
+          <div class="reel" id="reel-1" aria-live="polite">GPU Smoke</div>
+          <div class="reel" id="reel-2" aria-live="polite">VC Buzzword</div>
+        </div>
+
+        <div class="controls">
+          <button id="decrease-bet" class="secondary-button" type="button">Bet -5</button>
+          <button id="spin-button" class="primary-button" type="button">Spin To Monetize</button>
+          <button id="increase-bet" class="secondary-button" type="button">Bet +5</button>
+        </div>
+
+        <div class="message-panel">
+          <p id="round-message" class="round-message">The market believes in you for reasons that remain unclear.</p>
+          <p id="spend-message" class="spend-message">No tokens spent yet. Your fake wealth is intact.</p>
+        </div>
+      </div>
+    </section>
+
+    <aside class="side-panel">
+      <section class="panel">
+        <h2>Symbol Economy</h2>
+        <ul class="paytable" id="paytable"></ul>
+      </section>
+
+      <section class="panel">
+        <h2>Premium Token Sink</h2>
+        <div class="sink-card">
+          <p id="sink-title" class="sink-title">Waiting for investor-grade nonsense...</p>
+          <p id="sink-description" class="sink-description">Every win triggers a mandatory spend on a very serious AI expense.</p>
+        </div>
+      </section>
+    </aside>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
