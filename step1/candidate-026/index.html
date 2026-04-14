@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Token Burner 3000</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section class="hero">
+      <p class="eyebrow">Silicon Valley's least ethical arcade cabinet</p>
+      <h1>Token Burner 3000</h1>
+      <p class="tagline">Spin the reels. Win imaginary AI credits. Immediately spend them on increasingly silly machine-learning nonsense.</p>
+    </section>
+
+    <section class="machine" aria-label="AI satire slot machine">
+      <div class="status-bar">
+        <div class="meter">
+          <span class="meter-label">Prompt Tokens</span>
+          <strong id="tokenCount">120</strong>
+        </div>
+        <div class="meter">
+          <span class="meter-label">Spin Cost</span>
+          <strong>15</strong>
+        </div>
+        <div class="meter">
+          <span class="meter-label">Last Waste</span>
+          <strong id="wasteLabel">Waiting for bad decisions</strong>
+        </div>
+      </div>
+
+      <div class="reels-frame">
+        <div class="reels" role="img" aria-label="slot machine reels">
+          <div class="reel" id="reel1">🤖</div>
+          <div class="reel" id="reel2">🪙</div>
+          <div class="reel" id="reel3">🔥</div>
+        </div>
+      </div>
+
+      <div class="controls">
+        <button id="spinButton" type="button">Spin For Questionable Value</button>
+        <button id="resetButton" type="button" class="secondary">Reset Startup Funding</button>
+      </div>
+
+      <p class="message" id="message" aria-live="polite">
+        A venture capitalist has gifted you 120 prompt tokens. Try not to spend them all generating motivational slop.
+      </p>
+
+      <div class="payouts">
+        <h2>Payout Logic</h2>
+        <ul>
+          <li>3 matching symbols: jackpot tokens and a deeply unserious AI purchase.</li>
+          <li>2 matching symbols: modest rebate, still probably a bad product idea.</li>
+          <li>No match: the machine converts your money into “inference”.</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
