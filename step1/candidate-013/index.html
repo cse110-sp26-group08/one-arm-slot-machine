@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>One-Arm Slot Machine — AI Tokens</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="container">
+    <h1>One-Arm Slot Machine — Roast the AI!</h1>
+
+    <section class="status">
+      <div class="tokens">Tokens: <span id="tokens">100</span></div>
+      <div class="message" id="message">Pull the lever and show the AI who's boss.</div>
+    </section>
+
+    <section class="machine">
+      <div class="reels" id="reels">
+        <div class="reel" id="r1">🍒</div>
+        <div class="reel" id="r2">🍋</div>
+        <div class="reel" id="r3">🍊</div>
+      </div>
+
+      <div class="controls">
+        <button id="spinBtn">Pull Lever</button>
+        <button id="buyBtn">Buy Prompt (-10)</button>
+        <button id="trainBtn">Train AI (-20)</button>
+      </div>
+    </section>
+
+    <section class="log">
+      <h2>Round Log</h2>
+      <ul id="log"></ul>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

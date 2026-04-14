@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>AI Slot Machine — You're Winning Tokens</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="wrap">
+    <h1>AI Slot Machine</h1>
+    <p class="sub">Beat the model. Win tokens. Spend tokens. Laugh at AI.</p>
+
+    <div class="hud">
+      <div>Tokens: <strong id="tokens">100</strong></div>
+      <div>Bet: <input id="bet" type="number" min="1" value="5"></div>
+    </div>
+
+    <div class="machine">
+      <div class="reel" id="r0">?</div>
+      <div class="reel" id="r1">?</div>
+      <div class="reel" id="r2">?</div>
+    </div>
+
+    <div class="controls">
+      <button id="spin">Pull Lever (Spin)</button>
+      <button id="more">Cheer on AI (+10 tokens)</button>
+    </div>
+
+    <div id="log" class="log">AI: "Predicting your loss..."</div>
+
+    <footer class="foot">Made with vanilla HTML/CSS/JS — mock the AI, keep the tokens.</footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>One-Arm Slot Machine — Mocking AI</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="container">
+    <h1>One-Arm Slot Machine — Beat the AI</h1>
+
+    <section class="hud">
+      <div class="tokens">Tokens: <span id="tokens">0</span></div>
+      <div class="controls">
+        <button id="addTokens">Add 5 Tokens</button>
+        <button id="askAI">Ask AI (3 tokens)</button>
+      </div>
+    </section>
+
+    <section class="machine">
+      <div class="reels" id="reels">
+        <div class="reel" id="reel0">🍒</div>
+        <div class="reel" id="reel1">🍒</div>
+        <div class="reel" id="reel2">🍒</div>
+      </div>
+
+      <div class="actions">
+        <button id="spin">Pull the arm! (1 token)</button>
+        <div class="message" id="message">Tip: The AI thinks you should fold.</div>
+      </div>
+    </section>
+
+    <footer>
+      Made with mild sarcasm toward AI. Wins and taunts are fictional.
+    </footer>
+  </main>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

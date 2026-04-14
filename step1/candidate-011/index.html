@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Token Tugger 3000</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section class="hero">
+      <p class="eyebrow">Vanilla Web Slot Machine</p>
+      <h1>Token Tugger 3000</h1>
+      <p class="tagline">
+        Feed the machine tokens. Win more tokens. Pretend this is a sustainable AI business model.
+      </p>
+    </section>
+
+    <section class="machine" aria-label="AI token slot machine">
+      <div class="machine-top">
+        <div>
+          <p class="label">Wallet Balance</p>
+          <p class="stat" id="walletTokens" aria-live="polite">120</p>
+        </div>
+        <div>
+          <p class="label">Cost Per Spin</p>
+          <p class="stat" id="spinCost">15</p>
+        </div>
+        <div>
+          <p class="label">Prompt Quality</p>
+          <p class="stat" id="promptRating">Chaotic</p>
+        </div>
+      </div>
+
+      <div class="reels" role="img" aria-label="Three slot reels showing AI themed icons">
+        <div class="reel-frame"><div class="reel" id="reel1">🤖</div></div>
+        <div class="reel-frame"><div class="reel" id="reel2">🪙</div></div>
+        <div class="reel-frame"><div class="reel" id="reel3">🔥</div></div>
+      </div>
+
+      <div class="status-panel">
+        <p class="label">Model Output</p>
+        <p class="status" id="statusMessage" aria-live="polite">
+          Ready to convert investor optimism into token burn.
+        </p>
+      </div>
+
+      <div class="controls">
+        <button id="spinButton" class="spin-button" type="button">Spin the Model</button>
+        <button id="resetButton" class="reset-button" type="button">Reload Hype Cycle</button>
+      </div>
+
+      <div class="payouts">
+        <p class="label">Payout Lore</p>
+        <ul>
+          <li>3x `🪙` = +90 tokens for peak monetization theater</li>
+          <li>3x `🤖` = +60 tokens and a suspicious demo video</li>
+          <li>3x `📉` = +45 tokens because failure is now a pivot</li>
+          <li>Any 2 matching = +20 tokens and a fresh funding deck</li>
+          <li>No match = you paid for "reasoning"</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

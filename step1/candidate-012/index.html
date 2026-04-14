@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>One-Arm Slot Machine — Roast the AI</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="machine">
+    <h1>One-Arm Slot Machine — Roast the AI</h1>
+
+    <div class="status">
+      <div class="tokens">Tokens: <span id="tokens">50</span></div>
+      <div class="ai-prediction" id="aiPrediction">AI: Calculating your inevitable loss…</div>
+    </div>
+
+    <div class="reels" aria-live="polite">
+      <div class="reel" id="reel1">🍒</div>
+      <div class="reel" id="reel2">🍋</div>
+      <div class="reel" id="reel3">🍀</div>
+    </div>
+
+    <div class="controls">
+      <button id="spinBtn">SPIN (5 tokens)</button>
+      <button id="leverBtn" class="lever">Pull the Lever</button>
+      <button id="resetBtn" class="muted">Reset</button>
+    </div>
+
+    <div class="message" id="message">Tip: The AI promises nothing.</div>
+
+    <footer>
+      <small>Pro-tip: The AI apologizes for your poor RNG.</small>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
