@@ -1,0 +1,140 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Token Drain 9000</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section class="hero">
+      <p class="eyebrow">Synthetic Luck Simulator</p>
+      <h1>Token Drain 9000</h1>
+      <p class="tagline">A cleaner slot machine dashboard with visible costs, patterns, and round-by-round results.</p>
+    </section>
+
+    <section class="machine" aria-label="AI satire slot machine">
+      <section class="machine-top">
+        <section class="stats-panel" aria-label="Balance summary">
+          <div class="section-heading">
+            <p class="section-kicker">Balance</p>
+            <h2>Token Summary</h2>
+          </div>
+
+          <div class="stats-grid">
+            <article class="stat-card stat-card-primary">
+              <span class="panel-label">Current Balance</span>
+              <strong id="token-balance">120</strong>
+            </article>
+            <article class="stat-card">
+              <span class="panel-label">Starting Balance</span>
+              <strong id="starting-balance">120</strong>
+            </article>
+            <article class="stat-card">
+              <span class="panel-label">Total Spent</span>
+              <strong id="total-spent">0</strong>
+            </article>
+            <article class="stat-card">
+              <span class="panel-label">Total Gained</span>
+              <strong id="total-gained">0</strong>
+            </article>
+            <article class="stat-card stat-card-accent">
+              <span class="panel-label">Overall Net</span>
+              <strong id="total-net">0</strong>
+            </article>
+          </div>
+        </section>
+
+        <section class="play-panel" aria-label="Slot machine controls">
+        <div class="reels" aria-live="polite">
+          <div class="reel-frame"><span id="reel-1" class="reel-symbol" data-reel aria-label="Bot">🤖</span></div>
+          <div class="reel-frame"><span id="reel-2" class="reel-symbol" data-reel aria-label="Coin">🪙</span></div>
+          <div class="reel-frame"><span id="reel-3" class="reel-symbol" data-reel aria-label="Fire">🔥</span></div>
+        </div>
+
+        <section class="pattern-panel" aria-label="Current pattern">
+          <div>
+            <p class="panel-label">Detected Pattern</p>
+            <h2 id="pattern-name">Waiting for a spin</h2>
+            <p id="pattern-detail" class="pattern-detail">Three matching symbols pay the most. All payouts scale with your selected bet.</p>
+          </div>
+        </section>
+
+        <div class="play-controls">
+          <div class="play-config">
+            <label class="spin-count-label" for="spin-count">Spins to run</label>
+            <input id="spin-count" class="spin-count-input" type="number" min="1" max="10" value="1">
+          </div>
+
+          <div class="play-config">
+            <label class="spin-count-label" for="bet-per-spin">Tokens per spin</label>
+            <input id="bet-per-spin" class="spin-count-input" type="number" min="15" max="75" step="15" value="15">
+            <p id="play-note" class="play-note">1 spin at 15 tokens each. Payouts scale with your bet.</p>
+          </div>
+
+          <div class="controls">
+            <button id="spin-button" class="spin-button" type="button">Play 1 Spin</button>
+            <button id="stop-button" class="stop-button" type="button" hidden>Stop After This Spin</button>
+            <button id="reset-button" class="reset-button" type="button">Reset Balance</button>
+          </div>
+        </div>
+        </section>
+      </section>
+
+      <section class="details-grid">
+        <details class="collapsible-panel" open>
+          <summary>
+            <span>Payout Guide</span>
+            <span class="summary-hint">Hide</span>
+          </summary>
+          <div class="collapsible-content">
+            <ul class="payout-list">
+              <li><span>🪙 🪙 🪙</span><strong>+90 tokens</strong></li>
+              <li><span>🤖 🤖 🤖</span><strong>+65 tokens</strong></li>
+              <li><span>🔥 🔥 🔥</span><strong>+50 tokens</strong></li>
+              <li><span>🧠 🧠 🧠</span><strong>+45 tokens</strong></li>
+              <li><span>📉 📉 📉</span><strong>+30 tokens</strong></li>
+              <li><span>🧾 🧾 🧾</span><strong>+25 tokens</strong></li>
+              <li><span>Any pair</span><strong>+20 tokens</strong></li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="collapsible-panel" open>
+          <summary>
+            <span>Round History</span>
+            <span class="summary-hint">Hide</span>
+          </summary>
+          <div class="collapsible-content history-wrap">
+            <table class="history-table">
+              <thead>
+                <tr>
+                  <th scope="col">Round</th>
+                  <th scope="col">Output</th>
+                  <th scope="col">Result</th>
+                  <th scope="col">Net</th>
+                </tr>
+              </thead>
+              <tbody id="round-history">
+                <tr class="history-empty-row">
+                  <td colspan="4">No spins yet. Round results will appear here.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </details>
+      </section>
+
+      <section class="status-panel">
+        <p id="message" class="message">Choose how many spins to run, then pull the lever and watch the ledger.</p>
+      </section>
+    </section>
+  </main>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

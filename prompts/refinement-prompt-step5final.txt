@@ -1,0 +1,9 @@
+Make the following changes
+1. for the expandable widgets, the labels must be of same font size, and no need to write expand when needed
+2. number of tokens on win should reflect the actual amount based on the tokens per spin bet amount.
+3. add a light/dark theme toggle
+4. the website title should be at center and then the grid/flex layout should start below it.
+5. send pattern guide and symbols to the left and last round should be current round and to the right above round history.
+6. round history should show recent 6 but let the user see previous ones by scrolling the window until session is reseted
+7. untill all the spins are completed only the wheel and stop button widget should be visible, everything else should be darkened to give an effect that spining is active.
+8. On phone view the spin wheel and play button widget should be at top everything else below (session overview then everything else)
