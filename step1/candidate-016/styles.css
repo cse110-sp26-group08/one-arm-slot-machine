@@ -1,0 +1,334 @@
+:root {
+  --bg: #151111;
+  --bg-soft: #24191a;
+  --panel: rgba(34, 21, 23, 0.88);
+  --panel-strong: #322124;
+  --line: rgba(255, 226, 182, 0.18);
+  --text: #fff6e9;
+  --muted: #d7c4b2;
+  --accent: #ff9b54;
+  --accent-2: #ffd166;
+  --danger: #ff5d73;
+  --good: #98f5a7;
+  --shadow: 0 24px 80px rgba(0, 0, 0, 0.45);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at top, rgba(255, 155, 84, 0.25), transparent 30%),
+    radial-gradient(circle at bottom left, rgba(255, 209, 102, 0.18), transparent 28%),
+    linear-gradient(160deg, #120d0e 0%, #1f1516 55%, #2f1b16 100%);
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 22px 22px;
+  mask-image: radial-gradient(circle at center, black, transparent 80%);
+}
+
+.app-shell {
+  width: min(1180px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: 2rem 0 3rem;
+  display: grid;
+  grid-template-columns: 1.4fr 0.9fr;
+  gap: 1.5rem;
+}
+
+.hero-card,
+.panel-card {
+  border: 1px solid var(--line);
+  background: var(--panel);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(16px);
+}
+
+.hero-card {
+  padding: 1.6rem;
+  border-radius: 32px;
+}
+
+.eyebrow {
+  margin: 0;
+  color: var(--accent-2);
+  letter-spacing: 0.24em;
+  font-size: 0.72rem;
+}
+
+h1,
+h2 {
+  margin: 0;
+}
+
+h1 {
+  margin-top: 0.45rem;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.7rem, 6vw, 5rem);
+  line-height: 0.95;
+}
+
+.tagline {
+  max-width: 52ch;
+  color: var(--muted);
+  font-size: 1.06rem;
+}
+
+.status-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 1.6rem 0;
+}
+
+.status-tile,
+.panel-card {
+  border-radius: 24px;
+}
+
+.status-tile {
+  padding: 1rem 1.1rem;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(0, 0, 0, 0.1));
+  border: 1px solid var(--line);
+}
+
+.status-label,
+.status-note {
+  display: block;
+}
+
+.status-label,
+.marquee,
+.bet-control span {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.76rem;
+}
+
+.status-tile strong {
+  display: block;
+  margin: 0.25rem 0;
+  font-size: 2rem;
+}
+
+.status-note {
+  color: var(--muted);
+}
+
+.machine-frame {
+  padding: 1.2rem;
+  border-radius: 28px;
+  background:
+    linear-gradient(180deg, rgba(255, 209, 102, 0.14), rgba(255, 155, 84, 0.08)),
+    var(--panel-strong);
+  border: 1px solid rgba(255, 209, 102, 0.24);
+}
+
+.marquee {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  color: var(--accent-2);
+  margin-bottom: 1rem;
+}
+
+.reels {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.reel {
+  min-height: 180px;
+  display: grid;
+  place-items: center;
+  border-radius: 22px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(0, 0, 0, 0.2)),
+    #170f10;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  text-shadow: 0 0 30px rgba(255, 209, 102, 0.18);
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.reel.spinning {
+  animation: reel-bounce 180ms linear infinite alternate;
+}
+
+.controls {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1.2rem;
+}
+
+.bet-control {
+  display: grid;
+  gap: 0.7rem;
+}
+
+input[type="range"] {
+  width: 100%;
+  accent-color: var(--accent);
+}
+
+.button-row {
+  display: flex;
+  gap: 0.9rem;
+}
+
+button {
+  appearance: none;
+  border: 0;
+  border-radius: 999px;
+  font: inherit;
+  cursor: pointer;
+  transition: transform 140ms ease, opacity 140ms ease, box-shadow 140ms ease;
+}
+
+button:hover {
+  transform: translateY(-1px);
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
+  transform: none;
+}
+
+.spin-button,
+.ghost-button {
+  padding: 0.95rem 1.3rem;
+  font-weight: 700;
+}
+
+.spin-button {
+  flex: 1;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  color: #231816;
+  box-shadow: 0 12px 32px rgba(255, 155, 84, 0.25);
+}
+
+.ghost-button {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text);
+  border: 1px solid var(--line);
+}
+
+.side-panel {
+  display: grid;
+  gap: 1rem;
+}
+
+.panel-card {
+  padding: 1.2rem;
+}
+
+.panel-card h2 {
+  margin-bottom: 0.8rem;
+  font-size: 1.1rem;
+}
+
+.result-message {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.pay-table,
+.history-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pay-table li,
+.history-item {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.8rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.pay-table li:first-child,
+.history-item:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.history-item {
+  color: var(--muted);
+  line-height: 1.4;
+}
+
+.history-item strong {
+  color: var(--text);
+}
+
+.flash-win {
+  box-shadow: 0 0 0 2px rgba(152, 245, 167, 0.35), 0 0 42px rgba(152, 245, 167, 0.18);
+}
+
+.flash-loss {
+  box-shadow: 0 0 0 2px rgba(255, 93, 115, 0.35), 0 0 42px rgba(255, 93, 115, 0.16);
+}
+
+@keyframes reel-bounce {
+  from {
+    transform: translateY(-3px) scale(1.01);
+  }
+  to {
+    transform: translateY(3px) scale(0.99);
+  }
+}
+
+@media (max-width: 920px) {
+  .app-shell {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 680px) {
+  .app-shell {
+    width: min(100% - 1rem, 100%);
+    padding-top: 0.75rem;
+  }
+
+  .hero-card,
+  .panel-card {
+    border-radius: 24px;
+  }
+
+  .status-grid,
+  .reels {
+    grid-template-columns: 1fr;
+  }
+
+  .reel {
+    min-height: 120px;
+  }
+
+  .button-row {
+    flex-direction: column;
+  }
+
+  .marquee {
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+}

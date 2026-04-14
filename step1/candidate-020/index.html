@@ -1,60 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI Token Extractor</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <main class="app-shell">
-    <section class="hero">
-      <p class="eyebrow">Vanilla HTML + CSS + JavaScript</p>
-      <h1>AI Token Extractor</h1>
-      <p class="tagline">
-        Pull the lever, burn some tokens, and pray the machine blesses you with premium synthetic nonsense.
-      </p>
-    </section>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A vanilla web slot machine that satirizes AI token obsession."
+    />
+    <title>Token Laundromat 9000</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="page-shell">
+      <section class="hero panel">
+        <p class="eyebrow">SILICON VALLEY RECREATION SOFTWARE</p>
+        <h1>Token Laundromat 9000</h1>
+        <p class="intro-copy">
+          Pull the lever, win imaginary AI tokens, and immediately spend them on
+          bigger GPUs, louder demos, and investor-grade nonsense.
+        </p>
 
-    <section class="machine" aria-labelledby="machine-title">
-      <div class="machine-top">
-        <div>
-          <p class="panel-label">Current Balance</p>
-          <p id="token-balance" class="token-balance">120 tokens</p>
+        <div class="hero-stats" aria-label="Current machine statistics">
+          <article class="stat-card">
+            <span>Wallet</span>
+            <strong id="balance">240</strong>
+            <small>tokens not yet set on fire</small>
+          </article>
+          <article class="stat-card">
+            <span>Spin Cost</span>
+            <strong id="bet-display">20</strong>
+            <small>per act of synthetic optimism</small>
+          </article>
+          <article class="stat-card">
+            <span>Hype Index</span>
+            <strong id="hype-meter">Caffeinated</strong>
+            <small>confidence divorced from reality</small>
+          </article>
         </div>
-        <div class="status-pill" id="temperature-pill">Hallucination risk: moderate</div>
-      </div>
+      </section>
 
-      <h2 id="machine-title" class="sr-only">Slot machine reels</h2>
+      <section class="machine panel">
+        <div class="machine-header">
+          <div class="marquee" aria-hidden="true">
+            <span>agentic overpromising</span>
+            <span>tokens in, vibes out</span>
+            <span>benchmark pending</span>
+          </div>
+          <div class="top-actions">
+            <button id="voice-toggle" class="small-button" type="button" aria-pressed="false">
+              Snark Voice Off
+            </button>
+            <button id="share-button" class="small-button" type="button">
+              Share Shame
+            </button>
+          </div>
+        </div>
 
-      <div class="reels" aria-live="polite">
-        <div class="reel-window"><span id="reel-1" class="reel-symbol">🤖</span></div>
-        <div class="reel-window"><span id="reel-2" class="reel-symbol">🪙</span></div>
-        <div class="reel-window"><span id="reel-3" class="reel-symbol">💸</span></div>
-      </div>
+        <div class="cabinet">
+          <div class="status-strip" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
 
-      <div class="payout-board">
-        <p class="panel-label">Prompt Outcome</p>
-        <p id="result-message" class="result-message">Insert vibes. Pull lever. Monetize confusion.</p>
-      </div>
+          <div class="machine-layout">
+            <div class="reels-panel">
+              <div class="reels" role="img" aria-label="Three reels filled with AI joke symbols">
+                <div class="reel-shell">
+                  <div class="reel" id="reel-0">SEED</div>
+                </div>
+                <div class="reel-shell">
+                  <div class="reel" id="reel-1">BOT</div>
+                </div>
+                <div class="reel-shell">
+                  <div class="reel" id="reel-2">GPU</div>
+                </div>
+              </div>
 
-      <div class="controls">
-        <button id="spin-button" class="spin-button" type="button">Spend 15 tokens</button>
-        <button id="reset-button" class="reset-button" type="button">Reset bankroll</button>
-      </div>
+              <label class="bet-panel" for="bet-slider">
+                <span>Choose your burn rate</span>
+                <input id="bet-slider" type="range" min="10" max="50" step="10" value="20" />
+              </label>
 
-      <ul class="rules">
-        <li>Three matching icons: +60 tokens</li>
-        <li>Two matching icons: +25 tokens</li>
-        <li>Three laptops: +90 tokens for enterprise synergy</li>
-        <li>Run out of tokens: the model suggests “try upgrading”</li>
-      </ul>
-    </section>
-  </main>
+              <div class="action-row">
+                <button id="spin-button" class="primary-button" type="button">
+                  Pull The Lever
+                </button>
+                <button id="reset-button" class="secondary-button" type="button">
+                  Raise Another Round
+                </button>
+              </div>
+            </div>
 
-  <script src="script.js"></script>
-</body>
+            <aside class="burn-panel">
+              <h2>Automatic Token Spending</h2>
+              <p id="burn-message" class="burn-copy">
+                No winnings yet. The finance team is pretending this counts as runway.
+              </p>
+              <div class="burn-grid" aria-label="Token spending summary">
+                <article>
+                  <span>Total Won</span>
+                  <strong id="won-total">0</strong>
+                </article>
+                <article>
+                  <span>Total Burned</span>
+                  <strong id="burned-total">0</strong>
+                </article>
+                <article>
+                  <span>Best Hit</span>
+                  <strong id="best-win">0</strong>
+                </article>
+                <article>
+                  <span>Bad Ideas Funded</span>
+                  <strong id="bad-ideas">0</strong>
+                </article>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <section class="sidebar">
+        <article class="panel commentary-panel">
+          <h2>Machine Commentary</h2>
+          <p id="message">
+            Welcome back. Every pull converts ambition into a chart with suspicious axes.
+          </p>
+        </article>
+
+        <article class="panel">
+          <h2>Payout Logic</h2>
+          <ul class="rule-list">
+            <li><span>Three matching symbols</span><strong>5x winnings</strong></li>
+            <li><span>Any pair</span><strong>2x winnings</strong></li>
+            <li><span>`BOT BOT BOT`</span><strong>8x plus unbearable smugness</strong></li>
+            <li><span>`404` appears</span><strong>0x and a bold press release</strong></li>
+          </ul>
+        </article>
+
+        <article class="panel">
+          <h2>Recent Spin Deck</h2>
+          <ol id="history" class="history" aria-live="polite"></ol>
+        </article>
+      </section>
+    </main>
+
+    <template id="history-item-template">
+      <li class="history-item"></li>
+    </template>
+
+    <script src="./script.js"></script>
+  </body>
 </html>

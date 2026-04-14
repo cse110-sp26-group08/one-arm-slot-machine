@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A satirical AI token slot machine built with vanilla HTML, CSS, and JavaScript."
+    />
+    <title>Token Burn Casino</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="layout">
+      <section class="intro panel">
+        <p class="kicker">AUTONOMOUS VALUE EXTRACTION EXPERIENCE</p>
+        <h1>Token Burn Casino</h1>
+        <p class="lede">
+          Win tokens, lose tokens, and watch a tiny machine explain why your
+          bankruptcy is actually a productivity breakthrough.
+        </p>
+
+        <div class="stats" aria-label="Game stats">
+          <article class="stat">
+            <span class="label">Wallet</span>
+            <strong id="token-balance">180</strong>
+            <span class="meta">AI tokens</span>
+          </article>
+          <article class="stat">
+            <span class="label">Spin Cost</span>
+            <strong id="bet-amount">15</strong>
+            <span class="meta">tokens burned</span>
+          </article>
+          <article class="stat">
+            <span class="label">Machine Mood</span>
+            <strong id="machine-mood">Investor-ready</strong>
+            <span class="meta">no refunds</span>
+          </article>
+        </div>
+      </section>
+
+      <section class="machine panel" aria-label="AI slot machine">
+        <div class="machine-top">
+          <p class="ticker">
+            <span>context window shrinking</span>
+            <span>hallucination premium active</span>
+            <span>synergy jackpot pending</span>
+          </p>
+          <div class="signal-lamps" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+
+        <div class="reel-stage" role="img" aria-label="Three reels showing AI-themed symbols">
+          <div class="reel" id="reel-0">PROMPT</div>
+          <div class="reel" id="reel-1">TOKEN</div>
+          <div class="reel" id="reel-2">SPIN</div>
+        </div>
+
+        <div class="controls">
+          <label class="slider-wrap" for="bet-slider">
+            <span>Choose your confidence level</span>
+            <input id="bet-slider" type="range" min="5" max="30" step="5" value="15" />
+          </label>
+
+          <div class="button-row">
+            <button id="spin-button" class="primary" type="button">Pull The Lever</button>
+            <button id="reset-button" class="secondary" type="button">Reboot The Hype</button>
+          </div>
+        </div>
+      </section>
+
+      <aside class="sidebar">
+        <section class="panel">
+          <h2>Latest Narrative</h2>
+          <p id="result-message" class="result-message">
+            The machine is idle and preparing a very confident answer to a
+            question nobody asked.
+          </p>
+        </section>
+
+        <section class="panel">
+          <h2>Payout Logic</h2>
+          <ul class="pay-table">
+            <li><span>Three matching reels</span><strong>5x spin cost</strong></li>
+            <li><span>Any two matching reels</span><strong>2x spin cost</strong></li>
+            <li><span>`VC` + `PIVOT` + `DECK`</span><strong>4x spin cost</strong></li>
+            <li><span>`404` anywhere</span><strong>moral damage only</strong></li>
+          </ul>
+        </section>
+
+        <section class="panel">
+          <h2>Audit Trail</h2>
+          <ol id="history-list" class="history-list" aria-live="polite"></ol>
+        </section>
+      </aside>
+    </main>
+
+    <template id="history-item-template">
+      <li class="history-item"></li>
+    </template>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

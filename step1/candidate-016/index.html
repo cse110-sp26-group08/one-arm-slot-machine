@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A satirical slot machine where AI tokens go in, nonsense prizes come out."
+    />
+    <title>Token Gobbler 9000</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hero-card">
+        <p class="eyebrow">SATIRICAL TOKEN EXTRACTION DEVICE</p>
+        <h1>Token Gobbler 9000</h1>
+        <p class="tagline">
+          Feed the machine your precious AI tokens and pray for premium slop.
+        </p>
+
+        <div class="status-grid">
+          <article class="status-tile">
+            <span class="status-label">Wallet</span>
+            <strong id="token-balance">120</strong>
+            <span class="status-note">tokens remaining</span>
+          </article>
+          <article class="status-tile">
+            <span class="status-label">Bet</span>
+            <strong id="bet-amount">10</strong>
+            <span class="status-note">tokens per spin</span>
+          </article>
+          <article class="status-tile">
+            <span class="status-label">Mood</span>
+            <strong id="machine-mood">Smug</strong>
+            <span class="status-note">as designed</span>
+          </article>
+        </div>
+
+        <section class="machine-frame" aria-label="Slot machine">
+          <div class="marquee">
+            <span>Prompt harder</span>
+            <span>Spend faster</span>
+            <span>Hallucinate responsibly</span>
+          </div>
+
+          <div class="reels" role="img" aria-label="Three spinning reels of AI-themed symbols">
+            <div class="reel" id="reel-0">404</div>
+            <div class="reel" id="reel-1">LOL</div>
+            <div class="reel" id="reel-2">GPU</div>
+          </div>
+
+          <div class="controls">
+            <label class="bet-control" for="bet-slider">
+              <span>Token sacrifice</span>
+              <input id="bet-slider" type="range" min="5" max="25" step="5" value="10" />
+            </label>
+
+            <div class="button-row">
+              <button id="spin-button" class="spin-button" type="button">Pull Lever</button>
+              <button id="reset-button" class="ghost-button" type="button">New VC Round</button>
+            </div>
+          </div>
+        </section>
+      </section>
+
+      <aside class="side-panel">
+        <section class="panel-card">
+          <h2>Latest Spin</h2>
+          <p id="result-message" class="result-message">
+            The machine is idle, judging your prompt engineering.
+          </p>
+        </section>
+
+        <section class="panel-card">
+          <h2>Payout Table</h2>
+          <ul class="pay-table">
+            <li><span>Triple `GPU`</span><strong>5x bet</strong></li>
+            <li><span>Triple `404`</span><strong>4x bet</strong></li>
+            <li><span>Any pair</span><strong>2x bet</strong></li>
+            <li><span>`LOL` + `BUG` + `COPE`</span><strong>3x bet</strong></li>
+          </ul>
+        </section>
+
+        <section class="panel-card">
+          <h2>Ledger</h2>
+          <ol id="history-list" class="history-list" aria-live="polite"></ol>
+        </section>
+      </aside>
+    </main>
+
+    <template id="history-item-template">
+      <li class="history-item"></li>
+    </template>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
