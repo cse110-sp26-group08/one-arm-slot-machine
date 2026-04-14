@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Token Furnace 048</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section class="hero">
+      <p class="eyebrow">Candidate 048 | Satire Engine</p>
+      <h1>Token Furnace</h1>
+      <p class="tagline">Spend prompt tokens. Win synthetic validation. Pretend it is innovation.</p>
+    </section>
+
+    <section class="machine-panel">
+      <div class="stats-grid">
+        <article class="stat-card">
+          <span class="label">Wallet</span>
+          <strong id="tokenBalance">1200</strong>
+          <span class="hint">freshly raised venture tokens</span>
+        </article>
+        <article class="stat-card">
+          <span class="label">Spin Cost</span>
+          <strong id="spinCost">40</strong>
+          <span class="hint">per hallucination cycle</span>
+        </article>
+        <article class="stat-card">
+          <span class="label">Heat</span>
+          <strong id="heatMeter">1x</strong>
+          <span class="hint">multiplier from delusion streaks</span>
+        </article>
+        <article class="stat-card">
+          <span class="label">Jackpots</span>
+          <strong id="jackpotCount">0</strong>
+          <span class="hint">board-approved miracles</span>
+        </article>
+      </div>
+
+      <div class="machine-core">
+        <div class="marquee" id="marqueeText">Insert tokens to continue the disruption narrative.</div>
+
+        <div class="reels" aria-label="Slot machine reels">
+          <div class="reel"><span id="reel0">GPU</span></div>
+          <div class="reel"><span id="reel1">GPU</span></div>
+          <div class="reel"><span id="reel2">GPU</span></div>
+        </div>
+
+        <div class="controls">
+          <button id="spinButton" class="primary-btn">Spin the model</button>
+          <button id="upgradeButton" class="ghost-btn">Buy context window</button>
+          <button id="resetButton" class="ghost-btn">Reboot startup</button>
+        </div>
+
+        <div class="results-row">
+          <div class="result-chip">
+            <span>Last payout</span>
+            <strong id="lastPayout">0</strong>
+          </div>
+          <div class="result-chip">
+            <span>Streak</span>
+            <strong id="streakValue">0</strong>
+          </div>
+          <div class="result-chip">
+            <span>Best pull</span>
+            <strong id="bestPayout">0</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="lower-grid">
+      <article class="feed-card">
+        <div class="card-heading">
+          <h2>Console of Confidence</h2>
+          <span>live investor messaging</span>
+        </div>
+        <ul id="eventFeed" class="event-feed" aria-live="polite"></ul>
+      </article>
+
+      <article class="paytable-card">
+        <div class="card-heading">
+          <h2>Paytable</h2>
+          <span>totally scientific odds</span>
+        </div>
+        <div class="paytable">
+          <div><span>3x GPU</span><strong>+500</strong></div>
+          <div><span>3x Unicorn</span><strong>+360</strong></div>
+          <div><span>3x VC</span><strong>+280</strong></div>
+          <div><span>3x Prompt</span><strong>+220</strong></div>
+          <div><span>Any 2 match</span><strong>+90</strong></div>
+          <div><span>GPU + GPU + anything</span><strong>+140</strong></div>
+          <div><span>Triple 404</span><strong>- ego only</strong></div>
+        </div>
+        <p class="fine-print">Every fifth win raises heat. Higher heat means bigger payouts and even louder nonsense.</p>
+      </article>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
