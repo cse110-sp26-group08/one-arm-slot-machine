@@ -1,3 +1,20 @@
 remote_theme: pages-themes/primer@v0.6.0
 plugins:
   - jekyll-remote-theme
+
+# Custom color scheme
+color_scheme: dark
+
+# Custom CSS variables
+sass:
+  variables:
+    brand_color: "#FD261F"
+    body_bg: "#000000"
+    body_text: "#FFFFFF"
+    accent_color_1: "#FD261F"
+    accent_color_2: "#69C900"
+    accent_color_3: "#B246ED"
+
+# Additional customization
+github:
+  color_scheme: dark
