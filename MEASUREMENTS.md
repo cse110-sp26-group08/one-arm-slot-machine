@@ -43,10 +43,10 @@
 |candidate-041|2026.04.13-17.41|gpt 5.4|41|22k|22k|5:41|1:39|index.html	script.js	style.css|561|yes|no quality issues|good code, modular, and no magic numbers|
 |candidate-042|2026.04.13-17.53|gpt 5.4|41|23k|23k|23k|23k|5:53|1:47|index.html	script.js	style.css|510|yes|generic, but good quality|good code, modular, and no magic numbers|
 |candidate-043|2026.04.13-17.57|gpt 5.4|41|21k|21k|5:57|2:04s|index.html	script.js	style.css|607|yes|everything seems to work fine, no quality issues|good code, modular, and no magic numbers|
-| candidate-044 | | | | | | | | | | | | |
-| candidate-045 | | | | | | | | | | | | |
-| candidate-046 | | | | | | | | | | | | |
-| candidate-047 | | | | | | | | | | | | |
+| candidate-044 | 2026-4-13T16:39:24Z| gpt-5.4| 41| 24k-41| 24k| 2:21| 2:22| 4| 585| yes| everthing works| acceptable|
+| candidate-045 | 2026-4-13T16:42:36Z| gpt-5.4| 41| 29k-41| 29k| 2:30| 2:29| 4| 633| yes| everthing works| acceptable|
+| candidate-046 | 2026-4-13T17:04:18Z| gpt-5.4| 41| 27k-41| 27k| 2:12| 2:15| 4| 697| yes| everthing works| acceptable|
+| candidate-047 | 2026-4-13T17:07:43Z| gpt-5.4| 41| 27k-41| 27k| 2:46| 2:45| 4| 723| yes| everthing works| acceptable|
 | candidate-048 |2026-04-013T17:05:29Z |gpt-5.4 |41 |27k-41|27k |5:29 pm pt|4:26|3|781|Yes|Acceptable but not great|It is alright but too clustered|
 | candidate-049 |2026-04-013T17:05:40Z |gpt-5.4 |41 |43k-41 |43k |5:40 pm pt |2:35 |3 |853 |Yes |Clean UI but too much text |It is alright but also clustered|
 | candidate-050 |2026-04-013T17:05:49Z |gpt-5.4 |41 |55k-41 |55k |5:49 pm pt |2:30 |3 |814 |Yes |Much Cleaner UI and not too complex |It is accpetable but many functions|
