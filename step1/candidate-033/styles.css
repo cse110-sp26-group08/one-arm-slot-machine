@@ -1,0 +1,259 @@
+:root {
+  --bg-1: #07111f;
+  --bg-2: #13233b;
+  --panel: rgba(9, 16, 29, 0.82);
+  --panel-border: rgba(255, 255, 255, 0.12);
+  --accent: #ffb000;
+  --accent-2: #ff6b35;
+  --mint: #80ffdb;
+  --text: #f8f3e7;
+  --muted: #c6c0b5;
+  --danger: #ff7b7b;
+  --shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Space Grotesk", sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at top, rgba(255, 176, 0, 0.18), transparent 30%),
+    linear-gradient(160deg, var(--bg-1), var(--bg-2));
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 28px 28px;
+  pointer-events: none;
+}
+
+.app-shell {
+  width: min(980px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: 2.5rem 0 3rem;
+}
+
+.hero {
+  text-align: center;
+  margin-bottom: 2rem;
+  animation: rise-in 700ms ease-out both;
+}
+
+.eyebrow,
+.label {
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.75rem;
+  color: var(--mint);
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+}
+
+h1 {
+  font-family: "Bungee", cursive;
+  font-size: clamp(2.8rem, 8vw, 5.3rem);
+  line-height: 0.95;
+  margin-top: 0.5rem;
+  text-shadow: 0 8px 24px rgba(255, 107, 53, 0.35);
+}
+
+.tagline {
+  width: min(650px, 100%);
+  margin: 1rem auto 0;
+  color: var(--muted);
+  font-size: 1.08rem;
+}
+
+.machine,
+.payouts {
+  background: var(--panel);
+  border: 1px solid var(--panel-border);
+  border-radius: 28px;
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(18px);
+}
+
+.machine {
+  padding: 1.4rem;
+  animation: rise-in 900ms ease-out both;
+}
+
+.machine-top {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.machine-top > div,
+.payout-grid article {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 1rem;
+}
+
+.value {
+  margin: 0.35rem 0 0;
+  font-size: 1.35rem;
+  font-weight: 700;
+}
+
+.reels {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.reel {
+  min-height: 170px;
+  display: grid;
+  place-items: center;
+  font-size: clamp(3.5rem, 9vw, 5.5rem);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.05)),
+    rgba(6, 10, 18, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 24px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.reel.spinning {
+  animation: reel-jitter 180ms linear infinite;
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1.4rem;
+}
+
+button {
+  border: 0;
+  border-radius: 999px;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 160ms ease, box-shadow 160ms ease, opacity 160ms ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+}
+
+button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.spin-button {
+  padding: 0.95rem 1.35rem;
+  color: #241300;
+  background: linear-gradient(135deg, var(--accent), #ffd36a);
+  box-shadow: 0 12px 30px rgba(255, 176, 0, 0.25);
+}
+
+.ghost-button {
+  padding: 0.95rem 1.35rem;
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.status-board {
+  margin-top: 1.4rem;
+  padding: 1rem 1.2rem;
+  border-radius: 20px;
+  background: rgba(128, 255, 219, 0.08);
+  border: 1px solid rgba(128, 255, 219, 0.12);
+}
+
+.status,
+.substatus,
+.payout-grid p {
+  margin: 0;
+}
+
+.status {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.substatus {
+  margin-top: 0.45rem;
+  color: var(--muted);
+}
+
+.payouts {
+  margin-top: 1.5rem;
+  padding: 1.4rem;
+  animation: rise-in 1100ms ease-out both;
+}
+
+.payout-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.payout-grid h3 {
+  font-size: 1rem;
+  margin-bottom: 0.35rem;
+}
+
+@keyframes reel-jitter {
+  0% {
+    transform: translateY(-2px) scale(1.01);
+  }
+  50% {
+    transform: translateY(2px) scale(0.99);
+  }
+  100% {
+    transform: translateY(-2px) scale(1.01);
+  }
+}
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 720px) {
+  .app-shell {
+    width: min(100% - 1rem, 980px);
+    padding-top: 1rem;
+  }
+
+  .machine-top,
+  .reels,
+  .payout-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .reel {
+    min-height: 120px;
+  }
+}

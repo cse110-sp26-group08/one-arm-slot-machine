@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Token Extractor 3000</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section class="hero">
+      <p class="eyebrow">Prompt responsibly. Probably.</p>
+      <h1>AI Token Extractor 3000</h1>
+      <p class="tagline">
+        Spin the reels, win imaginary tokens, and immediately spend them on premium algorithmic nonsense.
+      </p>
+    </section>
+
+    <section class="machine-card" aria-label="Slot machine game">
+      <div class="status-bar">
+        <div class="stat">
+          <span class="stat-label">Wallet</span>
+          <strong id="tokenBalance">120</strong>
+          <span class="stat-unit">tokens</span>
+        </div>
+        <div class="stat">
+          <span class="stat-label">Spin Cost</span>
+          <strong id="spinCost">15</strong>
+          <span class="stat-unit">tokens</span>
+        </div>
+        <div class="stat">
+          <span class="stat-label">Last Payout</span>
+          <strong id="lastPayout">0</strong>
+          <span class="stat-unit">tokens</span>
+        </div>
+      </div>
+
+      <div class="reels" role="group" aria-label="Slot machine reels">
+        <div class="reel" id="reel1" aria-live="polite">404</div>
+        <div class="reel" id="reel2" aria-live="polite">GPU</div>
+        <div class="reel" id="reel3" aria-live="polite">LOL</div>
+      </div>
+
+      <div class="controls">
+        <button id="spinButton" class="spin-button" type="button">Spin For Bad Advice</button>
+        <button id="cashOutButton" class="cashout-button" type="button">Buy More Cloud Hype</button>
+      </div>
+
+      <p id="message" class="message" aria-live="polite">
+        Your startup has been pre-seeded with 120 tokens and unreasonable confidence.
+      </p>
+    </section>
+
+    <section class="payout-card">
+      <h2>Absurd Payouts</h2>
+      <ul class="payout-list">
+        <li><span>Three GPUs</span><strong>+90</strong></li>
+        <li><span>Triple 404</span><strong>+60</strong></li>
+        <li><span>Any pair</span><strong>+25</strong></li>
+        <li><span>No match</span><strong>-15 and a hard lesson</strong></li>
+      </ul>
+      <p class="fine-print">
+        Tokens have no cash value, spiritual value, or VC-approved roadmap.
+      </p>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

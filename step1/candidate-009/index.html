@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Token Laundromat</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section class="hero">
+      <p class="eyebrow">Generative Finance Division</p>
+      <h1>Token Laundromat</h1>
+      <p class="intro">
+        Pull the lever, farm fake AI tokens, then spend them on increasingly embarrassing upgrades like
+        premium hallucinations, enterprise jargon, and GPU incense.
+      </p>
+    </section>
+
+    <section class="machine" aria-labelledby="machine-title">
+      <div class="machine-head">
+        <div>
+          <p class="label">Machine Status</p>
+          <h2 id="machine-title">One-Armed Model Monetizer</h2>
+        </div>
+        <div class="ticker" id="ticker">MARKET OPEN</div>
+      </div>
+
+      <div class="stats" aria-label="Game statistics">
+        <article class="stat-card">
+          <span class="label">Wallet</span>
+          <strong id="balance">120</strong>
+          <small>tokens available</small>
+        </article>
+        <article class="stat-card">
+          <span class="label">Spin Cost</span>
+          <strong id="spinCost">15</strong>
+          <small>per inference</small>
+        </article>
+        <article class="stat-card">
+          <span class="label">Credibility</span>
+          <strong id="credibility">100</strong>
+          <small>drops when you buy nonsense</small>
+        </article>
+        <article class="stat-card">
+          <span class="label">Best Hoard</span>
+          <strong id="bestBalance">120</strong>
+          <small>stored locally</small>
+        </article>
+      </div>
+
+      <div class="machine-grid">
+        <section class="reel-bay" aria-label="Slot machine reels">
+          <div class="marquee">Payouts scale with matching AI buzzwords</div>
+          <div class="reels">
+            <div class="reel-frame"><div class="reel" id="reel0">Prompt</div></div>
+            <div class="reel-frame"><div class="reel" id="reel1">GPU</div></div>
+            <div class="reel-frame"><div class="reel" id="reel2">Slop</div></div>
+          </div>
+          <div class="controls">
+            <button id="spinButton" class="spin-button" type="button">Pull Lever</button>
+            <button id="cashOutButton" class="secondary-button" type="button">Waste Tokens Automatically</button>
+            <button id="resetButton" class="ghost-button" type="button">Reset Scam</button>
+          </div>
+        </section>
+
+        <aside class="sidebar">
+          <section class="panel">
+            <p class="label">Live Commentary</p>
+            <p id="status" class="status" aria-live="polite">
+              Seed funding received. The machine is ready to convert optimism into usage-based billing.
+            </p>
+          </section>
+
+          <section class="panel">
+            <p class="label">Rigged Math</p>
+            <ul class="rules">
+              <li>Three matching symbols: jackpot payout.</li>
+              <li>Two matching symbols: modest token rebate.</li>
+              <li>Three Slop symbols: extra payout because low quality scales beautifully.</li>
+            </ul>
+          </section>
+        </aside>
+      </div>
+    </section>
+
+    <section class="dashboard">
+      <section class="panel" aria-labelledby="shop-title">
+        <div class="section-head">
+          <div>
+            <p class="label">Spend Zone</p>
+            <h2 id="shop-title">Questionable AI Purchases</h2>
+          </div>
+          <p class="caption">Every item harms your credibility in a unique and investor-friendly way.</p>
+        </div>
+        <div id="store" class="store"></div>
+      </section>
+
+      <section class="panel" aria-labelledby="log-title">
+        <div class="section-head">
+          <div>
+            <p class="label">Audit Trail</p>
+            <h2 id="log-title">Recent Financial Mistakes</h2>
+          </div>
+          <p class="caption">In memory only. Like most AI governance.</p>
+        </div>
+        <ol id="log" class="log">
+          <li>Initial treasury loaded with 120 tokens and zero self-respect.</li>
+        </ol>
+      </section>
+    </section>
+  </main>
+
+  <template id="store-item-template">
+    <article class="store-item">
+      <div>
+        <h3 class="store-title"></h3>
+        <p class="store-copy"></p>
+      </div>
+      <div class="store-buy">
+        <strong class="store-price"></strong>
+        <button class="buy-button" type="button">Buy</button>
+      </div>
+    </article>
+  </template>
+
+  <script src="script.js"></script>
+</body>
+</html>
