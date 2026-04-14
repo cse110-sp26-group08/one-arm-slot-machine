@@ -1,0 +1,121 @@
+---
+---
+
+// Define custom color variables
+$brand_color: #fd261f;
+$body_bg: #000000;
+$body_text: #ffffff;
+$accent_1: #fd261f;
+$accent_2: #69c900;
+$accent_3: #b246ed;
+
+// Import the theme's styles
+@import "{{ site.theme }}";
+
+// Override theme variables
+$bg-color: $body_bg;
+$text-color: $body_text;
+$link-color: $accent_1;
+$border-color: $accent_3;
+
+// Global styles
+body {
+  background-color: $body_bg !important;
+  color: $body_text !important;
+}
+
+// Links
+a {
+  color: $accent_1 !important;
+
+  &:hover {
+    color: $accent_2 !important;
+  }
+}
+
+// Headers
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $body_text !important;
+  border-color: $accent_3 !important;
+}
+
+// Buttons and interactive elements
+button,
+.btn,
+input[type="button"],
+input[type="submit"] {
+  background-color: $accent_1 !important;
+  color: $body_text !important;
+  border-color: $accent_1 !important;
+
+  &:hover {
+    background-color: $accent_2 !important;
+    border-color: $accent_2 !important;
+  }
+}
+
+// Code blocks
+pre,
+code {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  color: $accent_2 !important;
+  border-color: $accent_3 !important;
+}
+
+// Tables
+table {
+  border-collapse: collapse;
+
+  tr:nth-child(odd) {
+    background-color: rgba(255, 255, 255, 0.05) !important;
+  }
+
+  th {
+    background-color: $accent_1 !important;
+    color: $body_text !important;
+    border-color: $accent_3 !important;
+  }
+
+  td {
+    border-color: $accent_3 !important;
+  }
+}
+
+// Blockquotes
+blockquote {
+  border-left-color: $accent_3 !important;
+  color: $body_text !important;
+}
+
+// Navigation
+nav {
+  background-color: rgba(0, 0, 0, 0.5) !important;
+
+  a {
+    color: $body_text !important;
+
+    &:hover {
+      color: $accent_2 !important;
+    }
+  }
+}
+
+// Main content area
+main,
+.content,
+article {
+  background-color: $body_bg !important;
+  color: $body_text !important;
+}
+
+// Sidebar and secondary elements
+aside,
+.sidebar {
+  background-color: rgba(255, 255, 255, 0.05) !important;
+  border-color: $accent_3 !important;
+}
