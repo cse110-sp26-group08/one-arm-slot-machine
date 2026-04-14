@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Token Drain Casino</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="page-shell">
+    <section class="hero">
+      <p class="kicker">Synthetic Luck Division</p>
+      <h1>Token Drain Casino</h1>
+      <p class="subtitle">
+        Win AI tokens. Lose AI tokens. Convert your hard-earned jackpot into premium
+        nonsense like enterprise vibes, benchmark theater, and luxury hallucinations.
+      </p>
+    </section>
+
+    <section class="cabinet" aria-labelledby="machineTitle">
+      <div class="cabinet-top">
+        <div>
+          <p class="panel-label">Machine</p>
+          <h2 id="machineTitle">One-Armed Prompt Bandit</h2>
+        </div>
+        <div class="signal" id="signalLight" aria-hidden="true">LIVE HYPE</div>
+      </div>
+
+      <div class="dashboard" aria-label="Game stats">
+        <article class="stat">
+          <span class="panel-label">Wallet</span>
+          <strong id="tokenBalance">180</strong>
+          <small>tokens remaining</small>
+        </article>
+        <article class="stat">
+          <span class="panel-label">Spin Cost</span>
+          <strong id="spinCost">25</strong>
+          <small>per act of optimism</small>
+        </article>
+        <article class="stat">
+          <span class="panel-label">High Score</span>
+          <strong id="highScore">180</strong>
+          <small>saved locally</small>
+        </article>
+        <article class="stat">
+          <span class="panel-label">Last Payout</span>
+          <strong id="lastPayout">0</strong>
+          <small>instant monetization</small>
+        </article>
+      </div>
+
+      <div class="machine-stage">
+        <div class="reels" role="group" aria-label="Slot reels">
+          <div class="reel-window"><div class="reel-symbol" id="reel0">GPU</div></div>
+          <div class="reel-window"><div class="reel-symbol" id="reel1">Lag</div></div>
+          <div class="reel-window"><div class="reel-symbol" id="reel2">Prompt</div></div>
+        </div>
+
+        <div class="side-panel">
+          <div class="side-card">
+            <span class="panel-label">Outcome Feed</span>
+            <p id="statusMessage" aria-live="polite">
+              Starter capital loaded. The machine assumes you are emotionally prepared to fund AI features nobody asked for.
+            </p>
+          </div>
+          <div class="side-card">
+            <span class="panel-label">Combo Rules</span>
+            <ul class="rules">
+              <li>3 matching symbols: full jackpot</li>
+              <li>2 matching symbols: pity payout</li>
+              <li>Hallucination triples pay extra because fraud scales</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="controls">
+        <button id="spinButton" class="primary-button" type="button">Spin The Hype Cycle</button>
+        <button id="autoSpendButton" class="secondary-button" type="button">Auto-Spend Winnings</button>
+        <button id="resetButton" class="ghost-button" type="button">Reset Economy</button>
+      </div>
+    </section>
+
+    <section class="lower-grid">
+      <section class="panel shop-panel" aria-labelledby="shopTitle">
+        <div class="panel-head">
+          <div>
+            <p class="panel-label">Token Sink</p>
+            <h2 id="shopTitle">Ridiculous Purchases</h2>
+          </div>
+          <p class="mini-note">Buy the future one bad decision at a time.</p>
+        </div>
+        <div class="shop-list" id="shopList"></div>
+      </section>
+
+      <section class="panel ledger-panel" aria-labelledby="ledgerTitle">
+        <div class="panel-head">
+          <div>
+            <p class="panel-label">Activity Log</p>
+            <h2 id="ledgerTitle">Where The Tokens Went</h2>
+          </div>
+          <p class="mini-note">Persistent only in memory. Like most strategies.</p>
+        </div>
+        <ol class="ledger-list" id="ledgerList">
+          <li>Initial deposit: 180 tokens and a reckless amount of confidence.</li>
+        </ol>
+      </section>
+    </section>
+  </main>
+
+  <canvas id="confettiCanvas" class="confetti-layer" aria-hidden="true"></canvas>
+
+  <template id="shopItemTemplate">
+    <article class="shop-item">
+      <div>
+        <h3 class="shop-item-title"></h3>
+        <p class="shop-item-copy"></p>
+      </div>
+      <div class="shop-item-buy">
+        <strong class="shop-item-price"></strong>
+        <button class="buy-button" type="button">Buy</button>
+      </div>
+    </article>
+  </template>
+
+  <script src="script.js"></script>
+</body>
+</html>
