@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A vanilla web slot machine where AI tokens appear, disappear, and get rebranded as innovation."
+    />
+    <title>Token Extraction Engine</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="page-shell">
+      <section class="hero">
+        <p class="eyebrow">COMPUTE-POWERED GAMES OF CHANCE</p>
+        <h1>Token Extraction Engine</h1>
+        <p class="intro">
+          Spin the reels, win imaginary AI tokens, and immediately donate them
+          back to the machine in the name of “strategic inference.”
+        </p>
+
+        <div class="status-grid" aria-label="Machine status">
+          <article class="status-card">
+            <span class="label">Wallet</span>
+            <strong id="balance">240</strong>
+            <span class="meta">tokens left to vaporize</span>
+          </article>
+          <article class="status-card">
+            <span class="label">Spin Cost</span>
+            <strong id="wager">20</strong>
+            <span class="meta">burned per prophecy</span>
+          </article>
+          <article class="status-card">
+            <span class="label">Buzzword Pressure</span>
+            <strong id="pressure">Seed-stage smug</strong>
+            <span class="meta">thermally unstable</span>
+          </article>
+        </div>
+      </section>
+
+      <section class="cabinet panel">
+        <div class="cabinet-top">
+          <div class="marquee" aria-hidden="true">
+            <span>premium slop pipeline</span>
+            <span>tokens entering the furnace</span>
+            <span>hallucinations fully monetized</span>
+          </div>
+          <button id="voice-button" class="voice-toggle" type="button" aria-pressed="false">
+            Announcer Off
+          </button>
+        </div>
+
+        <div class="machine-face">
+          <div class="lights" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+
+          <div class="reels" role="img" aria-label="Three slot reels with AI token symbols">
+            <div class="reel-window"><div class="reel" id="reel-0">PROMPT</div></div>
+            <div class="reel-window"><div class="reel" id="reel-1">TOKEN</div></div>
+            <div class="reel-window"><div class="reel" id="reel-2">COPE</div></div>
+          </div>
+
+          <div class="controls">
+            <label class="slider" for="bet-slider">
+              <span>Choose how many tokens to recklessly commit</span>
+              <input id="bet-slider" type="range" min="10" max="50" step="10" value="20" />
+            </label>
+
+            <div class="button-row">
+              <button id="spin-button" class="primary" type="button">Burn Tokens</button>
+              <button id="reset-button" class="secondary" type="button">Fresh Funding</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <aside class="sidebar">
+        <section class="panel narrative">
+          <h2>Machine Narrative</h2>
+          <p id="message">
+            Welcome, founder. The machine is ready to convert certainty into
+            ash and call it a platform strategy.
+          </p>
+        </section>
+
+        <section class="panel">
+          <h2>Payout Deck</h2>
+          <ul class="payouts">
+            <li><span>Three of a kind</span><strong>6x tokens</strong></li>
+            <li><span>Any pair</span><strong>2x tokens</strong></li>
+            <li><span>`GPU` `GPU` `GPU`</span><strong>8x plus arrogance</strong></li>
+            <li><span>`404` anywhere</span><strong>zero payout, max confidence</strong></li>
+          </ul>
+        </section>
+
+        <section class="panel">
+          <h2>Recent Damage</h2>
+          <ol id="history" class="history" aria-live="polite"></ol>
+        </section>
+      </aside>
+    </main>
+
+    <template id="history-item-template">
+      <li class="history-item"></li>
+    </template>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
