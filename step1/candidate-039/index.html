@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Token Slot Machine</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hero">
+        <p class="eyebrow">Silicon Valley's least stable economy</p>
+        <h1>One-Armed Token Drain</h1>
+        <p class="subcopy">
+          Pull the lever, win shiny AI tokens, then immediately spend them on
+          "premium reasoning," "vibe alignment," and other very serious upgrades.
+        </p>
+      </section>
+
+      <section class="machine" aria-label="AI slot machine">
+        <div class="machine-top">
+          <div>
+            <p class="label">Wallet</p>
+            <p class="value"><span id="tokens">120</span> tokens</p>
+          </div>
+          <div>
+            <p class="label">Cost Per Spin</p>
+            <p class="value">15 tokens</p>
+          </div>
+          <div>
+            <p class="label">Last Payout</p>
+            <p class="value"><span id="last-payout">0</span> tokens</p>
+          </div>
+        </div>
+
+        <div class="reels" role="group" aria-label="Slot reels">
+          <article class="reel">
+            <p class="reel-name">Hype</p>
+            <div class="symbol" id="reel-0" aria-live="polite">GPU</div>
+          </article>
+          <article class="reel">
+            <p class="reel-name">Buzz</p>
+            <div class="symbol" id="reel-1" aria-live="polite">BOT</div>
+          </article>
+          <article class="reel">
+            <p class="reel-name">Spend</p>
+            <div class="symbol" id="reel-2" aria-live="polite">COPE</div>
+          </article>
+        </div>
+
+        <div class="controls">
+          <button id="spin-button" class="spin-button" type="button">
+            Spin For Progress
+          </button>
+          <button id="auto-button" class="ghost-button" type="button">
+            Auto Burn x5
+          </button>
+          <button id="reset-button" class="ghost-button" type="button">
+            Reset Wallet
+          </button>
+        </div>
+
+        <p id="message" class="message" aria-live="polite">
+          Welcome back, valued user. Your tokens are already pre-optimized for
+          extraction.
+        </p>
+
+        <section class="ledger" aria-label="Token spending ledger">
+          <div class="ledger-head">
+            <h2>Where Your Tokens Went</h2>
+            <p>Every win triggers a very necessary AI expense.</p>
+          </div>
+          <ul id="ledger-list"></ul>
+        </section>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Token Grinder 3000</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section class="hero">
+      <p class="eyebrow">Vanilla HTML + CSS + JavaScript</p>
+      <h1>Token Grinder 3000</h1>
+      <p class="tagline">
+        Feed the machine your precious AI tokens and pray for a payout before the next hallucination fee hits.
+      </p>
+    </section>
+
+    <section class="machine" aria-label="AI token slot machine">
+      <div class="machine-top">
+        <div>
+          <p class="label">Wallet</p>
+          <p class="value" id="token-balance">120</p>
+        </div>
+        <div>
+          <p class="label">Spin Cost</p>
+          <p class="value">15</p>
+        </div>
+        <div>
+          <p class="label">Mood</p>
+          <p class="value" id="machine-mood">Smug</p>
+        </div>
+      </div>
+
+      <div class="reels" role="img" aria-label="Three slot reels showing AI-themed symbols">
+        <div class="reel" id="reel-0">404</div>
+        <div class="reel" id="reel-1">GPU</div>
+        <div class="reel" id="reel-2">LOL</div>
+      </div>
+
+      <div class="controls">
+        <button id="spin-button" class="spin-button" type="button">Spin For Tokens</button>
+        <button id="reset-button" class="ghost-button" type="button">Reset Wallet</button>
+      </div>
+
+      <div class="status-panel">
+        <p class="status-line" id="status-message" aria-live="polite">
+          Welcome back, valued prompt engineer. The machine can smell your optimism.
+        </p>
+        <div class="stats">
+          <div>
+            <span class="stats-label">Best hit</span>
+            <span class="stats-value" id="best-win">0</span>
+          </div>
+          <div>
+            <span class="stats-label">Spin streak</span>
+            <span class="stats-value" id="spin-streak">0</span>
+          </div>
+          <div>
+            <span class="stats-label">Jackpots</span>
+            <span class="stats-value" id="jackpots">0</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="payouts" aria-label="Payout table">
+      <h2>Payout Lore</h2>
+      <ul>
+        <li><strong>3 matching symbols:</strong> you outsmart the model and earn a fat token refund.</li>
+        <li><strong>2 matching symbols:</strong> the machine gives you a pity rebate.</li>
+        <li><strong>404 404 404:</strong> jackpot, because failure at scale is apparently premium.</li>
+      </ul>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Token Burner 3000</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hero">
+        <p class="eyebrow">Totally Ethical AI Casino</p>
+        <h1>Token Burner 3000</h1>
+        <p class="tagline">
+          Win imaginary tokens, lose real dignity, and let the machine explain
+          why your prompt “wasn’t specific enough.”
+        </p>
+      </section>
+
+      <section class="machine" aria-label="AI-themed slot machine">
+        <div class="status-bar">
+          <div class="stat-card">
+            <span class="stat-label">Token Wallet</span>
+            <strong id="token-count">1200</strong>
+          </div>
+          <div class="stat-card">
+            <span class="stat-label">Spin Cost</span>
+            <strong>150</strong>
+          </div>
+          <div class="stat-card">
+            <span class="stat-label">Jackpot</span>
+            <strong>900</strong>
+          </div>
+        </div>
+
+        <div class="reels" role="group" aria-label="Slot reels">
+          <div class="reel">
+            <span class="reel-label">Context</span>
+            <div class="symbol-window">
+              <span class="symbol" id="reel-0" aria-live="polite">404</span>
+            </div>
+          </div>
+          <div class="reel">
+            <span class="reel-label">Latency</span>
+            <div class="symbol-window">
+              <span class="symbol" id="reel-1" aria-live="polite">GPU</span>
+            </div>
+          </div>
+          <div class="reel">
+            <span class="reel-label">Alignment</span>
+            <div class="symbol-window">
+              <span class="symbol" id="reel-2" aria-live="polite">LOL</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="controls">
+          <button id="spin-button" class="spin-button" type="button">
+            Burn 150 Tokens
+          </button>
+          <button id="reset-button" class="secondary-button" type="button">
+            Bail Out Startup
+          </button>
+        </div>
+
+        <section class="results" aria-live="polite">
+          <p id="result-line" class="result-line">
+            The model is warmed up and ready to overcharge you.
+          </p>
+          <p id="snark-line" class="snark-line">
+            Tip: describing the obvious in 12 paragraphs may improve nothing.
+          </p>
+        </section>
+
+        <section class="payouts">
+          <h2>Payout Logic</h2>
+          <ul>
+            <li>3 matching symbols: +900 tokens and temporary executive confidence</li>
+            <li>2 matching symbols: +300 tokens and a fresh batch of buzzwords</li>
+            <li>No match: lose the spin cost and receive premium sarcasm</li>
+          </ul>
+        </section>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
