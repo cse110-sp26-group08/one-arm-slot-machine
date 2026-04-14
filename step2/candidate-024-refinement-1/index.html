@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Token Drain 9000</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section class="hero">
+      <p class="eyebrow">Synthetic Luck Simulator</p>
+      <h1>Token Drain 9000</h1>
+      <p class="tagline">A cleaner slot machine dashboard with visible costs, patterns, and round-by-round results.</p>
+    </section>
+
+    <section class="machine" aria-label="AI satire slot machine">
+      <div class="machine-top">
+        <div class="bank-panel">
+          <span class="panel-label">Current Balance</span>
+          <strong id="token-balance">120</strong>
+        </div>
+        <div class="bank-panel">
+          <span class="panel-label">Starting Balance</span>
+          <strong id="starting-balance">120</strong>
+        </div>
+        <div class="bank-panel">
+          <span class="panel-label">Total Spent</span>
+          <strong id="total-spent">0</strong>
+        </div>
+        <div class="bank-panel">
+          <span class="panel-label">Total Gained</span>
+          <strong id="total-gained">0</strong>
+        </div>
+        <div class="bank-panel bank-panel-accent">
+          <span class="panel-label">Overall Net</span>
+          <strong id="total-net">0</strong>
+        </div>
+      </div>
+
+      <div class="reels" aria-live="polite">
+        <div class="reel-frame"><span id="reel-1" class="reel-symbol" data-reel aria-label="Bot">🤖</span></div>
+        <div class="reel-frame"><span id="reel-2" class="reel-symbol" data-reel aria-label="Coin">🪙</span></div>
+        <div class="reel-frame"><span id="reel-3" class="reel-symbol" data-reel aria-label="Fire">🔥</span></div>
+      </div>
+
+      <section class="pattern-panel" aria-label="Current pattern">
+        <div>
+          <p class="panel-label">Detected Pattern</p>
+          <h2 id="pattern-name">Waiting for a spin</h2>
+          <p id="pattern-detail" class="pattern-detail">Three matching symbols pay the most. Any pair returns 20 tokens.</p>
+        </div>
+        <div class="play-config">
+          <label class="spin-count-label" for="spin-count">Spins to play</label>
+          <input id="spin-count" class="spin-count-input" type="number" min="1" max="10" value="1">
+          <p class="play-note">15 tokens per spin</p>
+        </div>
+      </section>
+
+      <div class="controls">
+        <button id="spin-button" class="spin-button" type="button">Play Selected Spins</button>
+        <button id="reset-button" class="reset-button" type="button">Reset Balance</button>
+      </div>
+
+      <section class="insights-grid">
+        <section class="payouts" aria-label="Payout guide">
+          <h2>Payout Guide</h2>
+          <ul>
+            <li><span>🪙 🪙 🪙</span><strong>+90 tokens</strong></li>
+            <li><span>🤖 🤖 🤖</span><strong>+65 tokens</strong></li>
+            <li><span>🔥 🔥 🔥</span><strong>+50 tokens</strong></li>
+            <li><span>🧠 🧠 🧠</span><strong>+45 tokens</strong></li>
+            <li><span>📉 📉 📉</span><strong>+30 tokens</strong></li>
+            <li><span>🧾 🧾 🧾</span><strong>+25 tokens</strong></li>
+            <li><span>Any pair</span><strong>+20 tokens</strong></li>
+          </ul>
+        </section>
+
+        <section class="history-panel" aria-label="Round history">
+          <h2>Round History</h2>
+          <ul id="round-history" class="history-list">
+            <li class="history-empty">No spins yet. Round results will appear here.</li>
+          </ul>
+        </section>
+      </section>
+
+      <section class="status-panel">
+        <p id="message" class="message">Choose how many spins to run, then pull the lever and watch the ledger.</p>
+      </section>
+    </section>
+  </main>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

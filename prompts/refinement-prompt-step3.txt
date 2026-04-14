@@ -1,0 +1,12 @@
+Make the website simpler,
+1. remove or hide unnecessary widgets by letting them contract and expand
+2. have a stop button if multiple spins are made. So also allow user to play once with multiple spins.
+3. make the play button centered and prominent
+
+Also make the overall UI more readable
+1. For the balance stats, have larger headings and organize them instead of having all in a row
+2. for the round history, have a table showing, what was the output of slot machine, which category of win/loss its in and the net token change amount.
+3. highlight matching pairs/triplets
+
+Code readability,
+1. make css more modular/readable

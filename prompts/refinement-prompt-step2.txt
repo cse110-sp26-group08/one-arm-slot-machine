@@ -1,0 +1,12 @@
+Improve the website according to the below requirements
+1. Add sounds
+2. Display on each round, how many tokens were gained vs spent
+3. Explicitly show patterns if any on the wheel
+4. Allow multiple plays and show the starting amount.
+
+Overall, make the website theme consistent including colors and fonts
+Make the website more readable and remove redundant text.
+
+Make the code more readable and manageable
+1. modularize the code
+2. add documentation so that readers can understand what is what

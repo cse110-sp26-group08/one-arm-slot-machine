@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Token Arcade</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;700&display=swap"
+    rel="stylesheet"
+  >
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="page-shell">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Neon Budget Simulator</p>
+        <h1>Token Arcade</h1>
+        <p class="summary">
+          Spin the reels, track exactly what each round earned and spent, and see every match
+          pattern before your budget disappears.
+        </p>
+      </div>
+      <div class="hero-card">
+        <p class="hero-label">How it works</p>
+        <p class="hero-text">
+          Every spin costs tokens, matching reels pay out, and a random purchase burns part of the
+          balance right away.
+        </p>
+      </div>
+    </section>
+
+    <section class="machine" aria-label="AI token slot machine">
+      <div class="machine-top">
+        <div class="stat">
+          <span class="stat-label">Starting</span>
+          <strong id="startingTokens">240</strong>
+        </div>
+        <div class="stat">
+          <span class="stat-label">Current</span>
+          <strong id="tokenBalance">240</strong>
+        </div>
+        <div class="stat">
+          <span class="stat-label">Spin Cost</span>
+          <strong id="spinCost">25</strong>
+        </div>
+        <div class="stat">
+          <span class="stat-label">Rounds</span>
+          <strong id="roundCount">0</strong>
+        </div>
+      </div>
+
+      <div class="playfield">
+        <div class="reel-panel">
+          <div class="reels" role="group" aria-label="Slot reels">
+            <div class="reel-frame"><div class="reel" id="reel0">PROMPT</div></div>
+            <div class="reel-frame"><div class="reel" id="reel1">TOKEN</div></div>
+            <div class="reel-frame"><div class="reel" id="reel2">GPU</div></div>
+          </div>
+
+          <div class="pattern-box">
+            <div>
+              <p class="mini-label">Pattern</p>
+              <p class="pattern-title" id="patternTitle">No pattern yet</p>
+            </div>
+            <p class="pattern-copy" id="patternCopy">
+              Start a round to reveal whether the reels landed a pair, jackpot, or full miss.
+            </p>
+          </div>
+        </div>
+
+        <div class="controls-panel">
+          <label class="control-field" for="playCount">
+            <span class="control-label">Plays this run</span>
+            <select id="playCount" class="play-select">
+              <option value="1">1 play</option>
+              <option value="3">3 plays</option>
+              <option value="5">5 plays</option>
+            </select>
+          </label>
+
+          <button id="leverButton" class="lever-button" type="button" aria-label="Pull the lever">
+            <span class="lever-stick" aria-hidden="true"></span>
+            <span class="lever-knob" aria-hidden="true"></span>
+            <span class="lever-text">Play</span>
+          </button>
+
+          <button id="resetButton" class="reset-button" type="button">Reset Machine</button>
+        </div>
+      </div>
+
+      <div class="status-box" aria-live="polite">
+        <p id="statusMessage">
+          Starting bankroll loaded. Each round will show the spin cost, payout, spending, and net
+          change.
+        </p>
+      </div>
+
+      <section class="dashboard" aria-label="Round details and spending log">
+        <article class="round-card">
+          <h2>Round Summary</h2>
+          <div class="round-grid">
+            <div>
+              <p class="mini-label">Round Start</p>
+              <p class="round-value" id="roundStart">240</p>
+            </div>
+            <div>
+              <p class="mini-label">Won</p>
+              <p class="round-value gain" id="roundWon">0</p>
+            </div>
+            <div>
+              <p class="mini-label">Spent</p>
+              <p class="round-value loss" id="roundSpent">0</p>
+            </div>
+            <div>
+              <p class="mini-label">Net</p>
+              <p class="round-value" id="roundNet">0</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="shop-card">
+          <div class="card-header">
+            <h2>Latest Purchase</h2>
+            <p class="shop-label">Auto-spend result</p>
+          </div>
+          <p class="shop-item" id="shopItem">No purchase yet</p>
+          <p class="shop-copy" id="shopCopy">
+            A post-spin purchase will appear here after the first completed round.
+          </p>
+        </article>
+
+        <article class="log-card">
+          <div class="card-header">
+            <h2>Recent Rounds</h2>
+            <p class="shop-label">Newest first</p>
+          </div>
+          <ol class="activity-log" id="activityLog">
+            <li>No rounds played yet.</li>
+          </ol>
+        </article>
+      </section>
+    </section>
+  </main>
+
+  <script type="module" src="script.js"></script>
+</body>
+</html>
