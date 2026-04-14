@@ -19,11 +19,11 @@
 | candidate-008              | Yes            | G          | Yes        | 8     |
 | candidate-009              | Yes            | G          | Ehh        | 6     |
 | candidate-010              | Yes            | G          | No         | 5     |
-| candidate-011              |                |            |            |       |
-| candidate-012              |                |            |            |       |
-| candidate-013              |                |            |            |       |
-| candidate-014              |                |            |            |       |
-| candidate-015              |                |            |            |       |
+| candidate-011              | Yes            | G          | Yes        | 5     |
+| candidate-012              | Yes            | G          | Yes        | 3     |
+| candidate-013              | Yes            | G          | Yes        | 2     |
+| candidate-014              | Yes            | G          | Yes        | 3     |
+| candidate-015              | Yes            | G          | Yes        | 2     |
 | candidate-016              | Yes            | G          | Yes        | 5     |
 | candidate-017              | Yes            | G          | Ehh        | 6     |
 | candidate-018              | Yes            | G          | Ehh        | 4     |
@@ -34,10 +34,10 @@
 | candidate-023              | Yes            | G          | Yes        | 7     |
 | candidate-024              | Yes            | G          | Yes        | 8     |
 | candidate-025              | Yes            | G          | Yes        | 7     |
-| candidate-026              |                |            |            |       |
-| candidate-027              |                |            |            |       |
-| candidate-028              |                |            |            |       |
-| candidate-029              |                |            |            |       |
+| candidate-026              | Yes            | G          | Ehh        | 5     |
+| candidate-027              | Yes            | G          | Yes        | 4     |
+| candidate-028              | Yes            | G          | Yes        | 6     |
+| candidate-029              | Yes            | G          | Yes        | 6     |
 | candidate-030              | Yes            | G          | Yes        | 7     |
 | candidate-031              | Yes            | G          | Yes        | 5     |
 | candidate-032              | Yes            | G          | Yes        | 5     |
