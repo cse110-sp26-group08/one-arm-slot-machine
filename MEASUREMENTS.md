@@ -1,15 +1,15 @@
 | Run ID | Timestamp | Model + version string | Input tokens | Output tokens | Total tokens | Wall-clock time (s) | Tool-reported time (s) | Files produced | Lines of code | Runs in browser? | App Quality Notes | Code Quality Notes |
 |--------|-----------|------------------------|---------------|----------------|---------------|---------------------|----------------------|-----------------|-----------------|------------------|-------------------|-------------------|
-| candidate-001 | | | | | | | | | | | | |
+| candidate-001 |2026-04-13T16:35:29Z| gpt-5.4| 41| 26k-41| 26k| 4:35 pm pt| 2:07| 3| 605| Yes| Ok-ish everything works but looks meh| acceptable could be better|
 | candidate-002 | | | | | | | | | | | | |
 | candidate-003 | | | | | | | | | | | | |
 | candidate-004 | | | | | | | | | | | | |
 | candidate-005 | | | | | | | | | | | | |
 | candidate-006 | | | | | | | | | | | | |
-| candidate-007 | | | | | | | | | | | | |
-| candidate-008 | | | | | | | | | | | | |
-| candidate-009 | | | | | | | | | | | | |
-| candidate-010 | | | | | | | | | | | | |
+| candidate-007 | 2026-04-13T17:02:37Z| gpt-5.4| 41| 2560| 2601| 5:02pm pt| 3:02| 3| 982| yes| good, colors are nice and everything works| acceptable could be better|
+| candidate-008 | 2026-04-13T17:14:38Z| gpt-5.4| 41| 26k-41| 26k| 5:12 pm pt| 2:09| 3| 970| yes| cool, colors are nice and has a lever feature for the slot machine| in working condition, it is ok|
+| candidate-009 | 2026-04-13T17:25:42Z| gpt-5.4| 41| 35k-41| 35k| 5:26 PM pt| 2:50| 3| 1024| no| does not work| does not work|
+| candidate-010 | 2026-04-13T17:32:40Z| gpt-5.4| 41| 33k-41| 33k| 5:32| 2:35| 3| 1050| yes| pretty generic color template works fine though| no super unnecesary code snippets|
 | candidate-011 | | | | | | | | | | | | |
 | candidate-012 | | | | | | | | | | | | |
 | candidate-013 | | | | | | | | | | | | |

@@ -1,0 +1,444 @@
+:root {
+  --bg: #102033;
+  --bg-deep: #08101b;
+  --panel: rgba(10, 19, 31, 0.86);
+  --panel-soft: rgba(255, 255, 255, 0.08);
+  --line: rgba(255, 255, 255, 0.14);
+  --text: #f5f2ea;
+  --muted: #b8c3d6;
+  --gold: #ffbf3c;
+  --orange: #ff7a18;
+  --red: #ff4d6d;
+  --cyan: #5eead4;
+  --mint: #bcf7cc;
+  --shadow: rgba(0, 0, 0, 0.34);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at top left, rgba(255, 122, 24, 0.25), transparent 28%),
+    radial-gradient(circle at bottom right, rgba(94, 234, 212, 0.2), transparent 24%),
+    linear-gradient(180deg, #18314d 0%, var(--bg) 45%, var(--bg-deep) 100%);
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+  background-size: 22px 22px;
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.65), transparent 92%);
+}
+
+.page-shell {
+  width: min(1120px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: 2rem 0 3rem;
+}
+
+.hero {
+  padding: 1rem 0 1.75rem;
+  max-width: 52rem;
+}
+
+.kicker,
+.panel-label,
+.mini-note {
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.72rem;
+}
+
+.kicker,
+.panel-label {
+  color: var(--cyan);
+}
+
+.hero h1,
+.panel h2,
+.cabinet h2 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  line-height: 0.96;
+}
+
+.hero h1 {
+  font-size: clamp(3rem, 9vw, 6.5rem);
+  max-width: 11ch;
+}
+
+.subtitle {
+  max-width: 42rem;
+  margin: 1rem 0 0;
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.cabinet,
+.panel {
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  background: var(--panel);
+  box-shadow: 0 24px 80px var(--shadow);
+  backdrop-filter: blur(16px);
+}
+
+.cabinet {
+  padding: 1.4rem;
+}
+
+.cabinet-top,
+.panel-head,
+.controls,
+.shop-item,
+.shop-item-buy {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.signal {
+  padding: 0.75rem 1rem;
+  border-radius: 999px;
+  background: linear-gradient(135deg, rgba(255, 77, 109, 0.26), rgba(255, 191, 60, 0.24));
+  border: 1px solid rgba(255, 191, 60, 0.35);
+  color: #ffd9a0;
+  font-size: 0.78rem;
+  letter-spacing: 0.18em;
+}
+
+.signal[data-tone="jackpot"] {
+  color: #fff6cf;
+  border-color: rgba(255, 191, 60, 0.6);
+  background: linear-gradient(135deg, rgba(255, 191, 60, 0.42), rgba(255, 122, 24, 0.28));
+}
+
+.signal[data-tone="double"] {
+  color: #dffff6;
+  border-color: rgba(94, 234, 212, 0.5);
+  background: linear-gradient(135deg, rgba(94, 234, 212, 0.28), rgba(188, 247, 204, 0.16));
+}
+
+.signal[data-tone="miss"],
+.signal[data-tone="broke"] {
+  color: #ffd1db;
+  border-color: rgba(255, 77, 109, 0.45);
+  background: linear-gradient(135deg, rgba(255, 77, 109, 0.22), rgba(16, 32, 51, 0.28));
+}
+
+.dashboard,
+.machine-stage,
+.lower-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.side-panel {
+  display: grid;
+  gap: 1rem;
+}
+
+.dashboard {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin-top: 1.2rem;
+}
+
+.stat,
+.side-card,
+.panel {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.stat,
+.side-card {
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  padding: 1rem;
+}
+
+.stat strong {
+  display: block;
+  margin-top: 0.3rem;
+  font-size: clamp(1.7rem, 4vw, 2.5rem);
+}
+
+.stat small,
+.side-card p,
+.rules,
+.shop-item-copy,
+.ledger-list {
+  color: var(--muted);
+}
+
+.machine-stage {
+  grid-template-columns: minmax(0, 1.5fr) minmax(280px, 0.85fr);
+  margin-top: 1rem;
+}
+
+.reels {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 24px;
+  background:
+    linear-gradient(180deg, rgba(255, 191, 60, 0.22), rgba(255, 122, 24, 0.08)),
+    rgba(6, 13, 22, 0.8);
+  border: 1px solid rgba(255, 191, 60, 0.18);
+}
+
+.reel-window {
+  position: relative;
+  min-height: 14rem;
+  overflow: hidden;
+  border-radius: 20px;
+  background:
+    linear-gradient(180deg, rgba(255, 250, 240, 0.98), rgba(255, 222, 169, 0.92));
+  border: 4px solid rgba(255, 191, 60, 0.8);
+  box-shadow: inset 0 14px 24px rgba(73, 42, 7, 0.18);
+}
+
+.reel-window::before,
+.reel-window::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 18%;
+  z-index: 1;
+}
+
+.reel-window::before {
+  top: 0;
+  background: linear-gradient(180deg, rgba(18, 32, 51, 0.32), transparent);
+}
+
+.reel-window::after {
+  bottom: 0;
+  background: linear-gradient(0deg, rgba(18, 32, 51, 0.32), transparent);
+}
+
+.reel-symbol {
+  display: grid;
+  place-items: center;
+  min-height: 14rem;
+  padding: 1rem;
+  text-align: center;
+  color: #5a2a00;
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.reel-symbol.spinning {
+  animation: reelJitter 120ms linear infinite;
+}
+
+.reel-symbol.win {
+  animation: winner 400ms ease;
+}
+
+.rules {
+  margin: 0.75rem 0 0;
+  padding-left: 1.1rem;
+  line-height: 1.7;
+}
+
+.controls {
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+button {
+  appearance: none;
+  border: none;
+  cursor: pointer;
+  font: inherit;
+  transition: transform 140ms ease, opacity 140ms ease, filter 140ms ease;
+}
+
+button:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.04);
+}
+
+button:active {
+  transform: translateY(1px);
+}
+
+button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.primary-button,
+.secondary-button,
+.ghost-button,
+.buy-button {
+  border-radius: 999px;
+  padding: 0.95rem 1.2rem;
+  font-weight: 700;
+}
+
+.primary-button {
+  background: linear-gradient(135deg, var(--gold), #ffd978);
+  color: #492301;
+  flex: 1 1 18rem;
+}
+
+.secondary-button {
+  background: linear-gradient(135deg, rgba(94, 234, 212, 0.2), rgba(188, 247, 204, 0.15));
+  color: var(--mint);
+  border: 1px solid rgba(94, 234, 212, 0.3);
+}
+
+.ghost-button {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--line);
+}
+
+.lower-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 1rem;
+}
+
+.panel {
+  padding: 1.25rem;
+}
+
+.mini-note {
+  color: rgba(245, 242, 234, 0.6);
+  max-width: 14rem;
+  text-align: right;
+  line-height: 1.5;
+}
+
+.shop-list,
+.ledger-list {
+  display: grid;
+  gap: 0.9rem;
+  margin-top: 1rem;
+}
+
+.shop-item {
+  padding: 1rem;
+  border-radius: 20px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.shop-item-title {
+  margin: 0;
+  font-size: 1.06rem;
+}
+
+.shop-item-copy {
+  margin: 0.35rem 0 0;
+  line-height: 1.6;
+}
+
+.shop-item-buy {
+  flex-shrink: 0;
+}
+
+.shop-item-price {
+  color: var(--gold);
+}
+
+.buy-button {
+  background: rgba(255, 191, 60, 0.16);
+  color: #ffd978;
+  border: 1px solid rgba(255, 191, 60, 0.35);
+}
+
+.ledger-list {
+  margin-bottom: 0;
+  padding-left: 1.25rem;
+  line-height: 1.7;
+}
+
+.confetti-layer {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+}
+
+@keyframes reelJitter {
+  0% { transform: translateY(-3px); }
+  50% { transform: translateY(3px); }
+  100% { transform: translateY(-3px); }
+}
+
+@keyframes winner {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+@media (max-width: 960px) {
+  .dashboard,
+  .machine-stage,
+  .lower-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .reel-window,
+  .reel-symbol {
+    min-height: 10rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .page-shell {
+    width: min(100% - 1rem, 42rem);
+    padding-top: 1rem;
+  }
+
+  .cabinet,
+  .panel {
+    padding: 1rem;
+  }
+
+  .cabinet-top,
+  .panel-head,
+  .shop-item,
+  .shop-item-buy {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .dashboard,
+  .reels {
+    grid-template-columns: 1fr;
+  }
+
+  .mini-note {
+    text-align: left;
+  }
+
+  .controls button,
+  .buy-button,
+  .secondary-button,
+  .ghost-button {
+    width: 100%;
+  }
+}

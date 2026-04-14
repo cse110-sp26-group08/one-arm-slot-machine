@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Token Drain Casino</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app">
+    <section class="hero">
+      <p class="eyebrow">Synthetic Wealth Extraction Portal</p>
+      <h1>Token Drain Casino</h1>
+      <p class="intro">
+        Spin for AI tokens, then immediately burn them on premium nonsense like hallucination insurance,
+        investor decks, and cloud invoices with feelings.
+      </p>
+    </section>
+
+    <section class="machine" aria-labelledby="machine-title">
+      <div class="machine-top">
+        <div>
+          <p class="label">Machine</p>
+          <h2 id="machine-title">The One-Armed Prompt Bandit</h2>
+        </div>
+        <div class="signal" id="signal">MODEL ONLINE</div>
+      </div>
+
+      <div class="stats" aria-label="Token statistics">
+        <article class="stat">
+          <span class="label">Wallet</span>
+          <strong id="tokens">90</strong>
+          <small>tokens left</small>
+        </article>
+        <article class="stat">
+          <span class="label">Spin Cost</span>
+          <strong id="cost">12</strong>
+          <small>per prompt</small>
+        </article>
+        <article class="stat">
+          <span class="label">Waste Rate</span>
+          <strong id="wasteRate">0%</strong>
+          <small>token leak</small>
+        </article>
+        <article class="stat">
+          <span class="label">Best Run</span>
+          <strong id="best">90</strong>
+          <small>stored locally</small>
+        </article>
+      </div>
+
+      <div class="cabinet">
+        <section class="reel-panel" aria-label="Slot machine reels">
+          <div class="marquee">Payouts based on matching AI buzzwords and investor optimism.</div>
+          <div class="reels">
+            <div class="reel-shell"><div class="reel" id="reel0">Prompt</div></div>
+            <div class="reel-shell"><div class="reel" id="reel1">Token</div></div>
+            <div class="reel-shell"><div class="reel" id="reel2">Hype</div></div>
+          </div>
+
+          <div class="actions">
+            <button id="spinButton" class="primary" type="button">Pull Lever</button>
+            <button id="burnButton" class="secondary" type="button">Auto-Burn Winnings</button>
+            <button id="resetButton" class="ghost" type="button">Reset Scam</button>
+          </div>
+        </section>
+
+        <aside class="side-panel">
+          <section class="panel">
+            <p class="label">Commentary</p>
+            <p id="status" class="status" aria-live="polite">
+              Treasury loaded. The machine is standing by to convert hype into usage billing.
+            </p>
+          </section>
+
+          <section class="panel">
+            <p class="label">Payout Logic</p>
+            <ul class="rules">
+              <li>Three matching symbols print a larger token payout.</li>
+              <li>Two matching symbols refund some of your bad decisions.</li>
+              <li>Three Slop symbols overpay because low quality scales best.</li>
+            </ul>
+          </section>
+        </aside>
+      </div>
+    </section>
+
+    <section class="lower">
+      <section class="panel" aria-labelledby="store-title">
+        <div class="section-head">
+          <div>
+            <p class="label">Spend Tokens</p>
+            <h2 id="store-title">Questionable AI Purchases</h2>
+          </div>
+          <p class="caption">Every purchase increases the leak rate, because recurring cost is the real final boss.</p>
+        </div>
+        <div id="shop" class="shop"></div>
+      </section>
+
+      <section class="panel" aria-labelledby="ledger-title">
+        <div class="section-head">
+          <div>
+            <p class="label">Ledger</p>
+            <h2 id="ledger-title">Recent Token Crimes</h2>
+          </div>
+          <p class="caption">Short memory. Long invoice.</p>
+        </div>
+        <ol id="log" class="log">
+          <li>Loaded 90 tokens and a dangerous amount of confidence.</li>
+        </ol>
+      </section>
+    </section>
+  </main>
+
+  <template id="shop-item-template">
+    <article class="shop-item">
+      <div>
+        <h3 class="shop-name"></h3>
+        <p class="shop-copy"></p>
+      </div>
+      <div class="shop-buy">
+        <strong class="shop-price"></strong>
+        <button class="buy-button" type="button">Buy</button>
+      </div>
+    </article>
+  </template>
+
+  <script src="script.js"></script>
+</body>
+</html>
