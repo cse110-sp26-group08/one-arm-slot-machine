@@ -1,5 +1,7 @@
 # final report
 
+## Important to mention
+Codex did not allow us to calculate the exact number of output tokens, it just gave us the total tokens used to the nearest thousand. So we caculated our tokens for the measurements.md file by using OpenAI's online tokenzier to get the tokens for our input prompt. Then we got the total number of tokens used by Codex throught the codex vscode extension. Finally, to get the total output tokens we subtracted the total number of tokens by the input prompt tokens.
 ## step 2
 Out of the 50 websites we made, we really liked websites that utilized emojis for the symbols in the slot machine.Also, we liked how some of the websites used sound when you clicked spin. Lastly, We liked websites that used consistent color themes and we settled pretty early that we wanted our color theme to be some form of blue. Given these design choices, we made our prompt adress these three and also made sure to include a snippet in the prompt about improving the code quality and to space out functions in the js file to make sure the code was not cluttered.
 
