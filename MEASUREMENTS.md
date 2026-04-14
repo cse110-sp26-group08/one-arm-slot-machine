@@ -10,11 +10,11 @@
 | candidate-008 | 2026-04-13T17:14:38Z| gpt-5.4| 41| 26k-41| 26k| 5:12 pm pt| 2:09| 3| 970| yes| cool, colors are nice and has a lever feature for the slot machine| in working condition, it is ok|
 | candidate-009 | 2026-04-13T17:25:42Z| gpt-5.4| 41| 35k-41| 35k| 5:26 PM pt| 2:50| 3| 1024| no| does not work| does not work|
 | candidate-010 | 2026-04-13T17:32:40Z| gpt-5.4| 41| 33k-41| 33k| 5:32| 2:35| 3| 1050| yes| pretty generic color template works fine though| no super unnecesary code snippets|
-| candidate-011 | | | | | | | | | | | | |
-| candidate-012 | | | | | | | | | | | | |
-| candidate-013 | | | | | | | | | | | | |
-| candidate-014 | | | | | | | | | | | | |
-| candidate-015 | | | | | | | | | | | | |
+| candidate-011 |2026-04-13T19:52:49Z |GPT-5.4 Low | 41 | 30K | 30K | 1:51 | 1:49 | 3 | 464 | yes | Responsive but boring | Mediocre code, looks nice but organization is a problem| 
+| candidate-012 |2026-04-13T19:54:41Z |GPT-5.4 Low | 41 | 15K | 15K | 0:30 | 0:29 | 4 | 148 | yes | Responsive, looks a lot more "modern than 011 | Code style is a little less readable due to more compact typing style |
+| candidate-013 |2026-04-13T19:56:10Z |GPT-5.4 Low | 41 | 22K | 22K | 1:15 |1:14 | 4 | 146 | yes | Responsive. Looks very similar to 012, albeit they added a few extra buttons that clutter up the website a bit | Code quality is acceptable albeit still a bit hard to read |
+| candidate-014 |2026-04-13T19:59:11Z |GPT-5.4 Low | 41 | 17K | 17K | 1:02 | 1:00 | 4 | 120 | yes | Responsive, has the same "smoothed" card design as 012 and 013, looks very similar | CSS code quality sucks and is all smooshed together, js code is pretty well formatted |
+| candidate-015 |2026-04-13T20:01Z |GPT-5.4 Low | 41 | 21K| 21K | 1:24 | 1:21 | 4 | 171 | yes | Responsive,similar design to 013 and 012 | Code contains magic numbers, quality is acceptable |
 | candidate-016 |2026-04-13T17:19:50Z|gpt-5.4 |41 |21000 | 21k-41| 5:19 pm pt| 2:17 |3|660| Yes| Works words go beyond the square| Looks okay |
 | candidate-017 |2026-04-13T17:28:31Z|gpt-5.4 |41 |27000 | 27k-41| 5:28 pm pt| 2:16 |3|805| Yes| Works words go beyond the square, and some features just seem useless, why are they there? they dont do anything| Looks okay, but can be improved |
 | candidate-018 |2026-04-13T17:40:13Z|gpt-5.4 |41 |32000 | 32k-41| 5:40 pm pt| 2:39 |3|876| Yes| Works words go beyond boxes all over the place, and most of the features are straight up useless, why are they there? they dont do anything| Looks good |

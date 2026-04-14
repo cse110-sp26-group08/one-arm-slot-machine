@@ -1,0 +1,24 @@
+:root{
+  --bg:#0f1724;
+  --card:#0b1220;
+  --accent:#ffcf33;
+  --muted:#98a0b3;
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:Inter,Segoe UI,Helvetica,Arial,sans-serif;background:linear-gradient(180deg,#071029,#08121a);color:#e6eef8}
+.container{max-width:720px;margin:32px auto;padding:20px}
+h1{text-align:center;margin:0 0 18px;font-size:1.6rem}
+.hud{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
+.tokens{font-weight:700;color:var(--accent)}
+.controls button{margin-left:8px}
+.machine{background:var(--card);padding:18px;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,0.6)}
+.reels{display:flex;justify-content:space-between;gap:12px;padding:18px}
+.reel{flex:1;background:linear-gradient(180deg,#112233,#0d1b2b);height:110px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:48px;user-select:none}
+.actions{display:flex;align-items:center;justify-content:space-between;padding:0 4px}
+.actions button{background:var(--accent);border:none;padding:10px 14px;border-radius:8px;font-weight:700;cursor:pointer}
+.actions button:active{transform:translateY(1px)}
+.message{color:var(--muted);font-size:0.95rem;margin-left:12px}
+footer{margin-top:14px;text-align:center;color:var(--muted);font-size:0.85rem}
+
+/* simple blink for message */
+.taunt{color:#fff;transition:opacity 200ms ease}
