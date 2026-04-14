@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Token Velocity Machine</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="shell">
+    <section class="hero">
+      <p class="eyebrow">Vanilla HTML, CSS, JavaScript, localStorage</p>
+      <h1>Token Velocity Machine</h1>
+      <p class="lede">
+        Spin for AI tokens, celebrate the fake jackpot, then watch the app spend your winnings on
+        premium hallucinations, GPU smoke, and investor-grade optimism.
+      </p>
+    </section>
+
+    <section class="machine" aria-label="AI token slot machine">
+      <div class="topline panel">
+        <div>
+          <p class="label">Wallet</p>
+          <p class="metric" id="wallet-count">240</p>
+        </div>
+        <div>
+          <p class="label">Spin Cost</p>
+          <p class="metric">30</p>
+        </div>
+        <div>
+          <p class="label">Model Ego</p>
+          <p class="metric" id="ego-meter">Unchecked</p>
+        </div>
+      </div>
+
+      <div class="cabinet panel">
+        <div class="lights" aria-hidden="true">
+          <span>Prompt deluxe</span>
+          <span>Hallucination safe</span>
+          <span>Compliance adjacent</span>
+        </div>
+
+        <div class="reels" role="img" aria-label="Three slot reels showing AI satire symbols">
+          <div class="reel" id="reel-1">BOT</div>
+          <div class="reel" id="reel-2">BOT</div>
+          <div class="reel" id="reel-3">BOT</div>
+        </div>
+
+        <p class="status" id="status" aria-live="polite">
+          Insert confidence. The machine accepts tokens, jargon, and avoidable subscriptions.
+        </p>
+      </div>
+
+      <div class="actions">
+        <button id="spin-button" class="spin-button" type="button">Spin 30 Tokens</button>
+        <button id="reset-button" class="reset-button" type="button">Reset Budget</button>
+      </div>
+
+      <div class="analytics">
+        <article class="panel stat-card">
+          <div class="stat-header">
+            <span>Hype Burn Rate</span>
+            <strong id="burn-rate-label">42%</strong>
+          </div>
+          <div class="bar"><div class="fill burn" id="burn-rate-fill"></div></div>
+        </article>
+        <article class="panel stat-card">
+          <div class="stat-header">
+            <span>Truth Alignment</span>
+            <strong id="truth-label">68%</strong>
+          </div>
+          <div class="bar"><div class="fill truth" id="truth-fill"></div></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="spend-grid">
+      <article class="panel spend-card">
+        <p class="label">Latest Prize</p>
+        <p class="spend-value" id="last-prize">No token shower yet</p>
+        <p class="small">Every win arrives pre-assigned to a terrible AI initiative.</p>
+      </article>
+      <article class="panel spend-card">
+        <p class="label">Total Burned</p>
+        <p class="spend-value" id="burned-total">0 tokens</p>
+        <p class="small">Operational excellence through reckless monetization.</p>
+      </article>
+    </section>
+
+    <section class="panel feed">
+      <div class="feed-header">
+        <h2>Expense Feed</h2>
+        <p>Because every jackpot should be followed by a much dumber purchase.</p>
+      </div>
+      <ul id="feed-list" class="feed-list" aria-live="polite"></ul>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

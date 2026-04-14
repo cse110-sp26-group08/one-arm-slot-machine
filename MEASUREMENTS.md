@@ -43,10 +43,10 @@
 | candidate-041 | | | | | | | | | | | | |
 | candidate-042 | | | | | | | | | | | | |
 | candidate-043 | | | | | | | | | | | | |
-| candidate-044 | | | | | | | | | | | | |
-| candidate-045 | | | | | | | | | | | | |
-| candidate-046 | | | | | | | | | | | | |
-| candidate-047 | | | | | | | | | | | | |
+| candidate-044 | 2026-4-13T16:39:24Z| gpt-5.4| 41| 24k-41| 24k| 2:21| 2:22| 4| 585| yes| everthing works| acceptable|
+| candidate-045 | 2026-4-13T16:42:36Z| gpt-5.4| 41| 29k-41| 29k| 2:30| 2:29| 4| 633| yes| everthing works| acceptable|
+| candidate-046 | 2026-4-13T17:04:18Z| gpt-5.4| 41| 27k-41| 27k| 2:12| 2:15| 4| 697| yes| everthing works| acceptable|
+| candidate-047 | 2026-4-13T17:07:43Z| gpt-5.4| 41| 27k-41| 27k| 2:46| 2:45| 4| 723| yes| everthing works| acceptable|
 | candidate-048 | | | | | | | | | | | | |
 | candidate-049 | | | | | | | | | | | | |
 | candidate-050 | | | | | | | | | | | | |
