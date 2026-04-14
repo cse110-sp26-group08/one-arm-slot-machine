@@ -47,6 +47,6 @@
 | candidate-045 | | | | | | | | | | | | |
 | candidate-046 | | | | | | | | | | | | |
 | candidate-047 | | | | | | | | | | | | |
-| candidate-048 | | | | | | | | | | | | |
-| candidate-049 | | | | | | | | | | | | |
-| candidate-050 | | | | | | | | | | | | |
+| candidate-048 |2026-04-013T17:05:29Z |gpt-5.4 |41 |27k-41|27k |5:29 pm pt|4:26|3|781|Yes|Acceptable but not great|It is alright but too clustered|
+| candidate-049 |2026-04-013T17:05:40Z |gpt-5.4 |41 |43k-41 |43k |5:40 pm pt |2:35 |3 |853 |Yes |Clean UI but too much text |It is alright but also clustered|
+| candidate-050 |2026-04-013T17:05:49Z |gpt-5.4 |41 |55k-41 |55k |5:49 pm pt |2:30 |3 |814 |Yes |Much Cleaner UI and not too complex |It is accpetable but many functions|
