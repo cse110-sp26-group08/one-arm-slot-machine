@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Token Arcade</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;700&display=swap"
+    rel="stylesheet"
+  >
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="page-shell">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Readable Slot Machine</p>
+        <h1>Token Arcade</h1>
+        <p class="summary">
+          Spin once or queue a short run, stop after the current spin if needed, and read each
+          round clearly without digging through extra widgets.
+        </p>
+      </div>
+    </section>
+
+    <section class="machine" aria-label="AI token slot machine">
+      <section class="stats-panel" aria-label="Balance stats">
+        <div class="section-heading">
+          <p class="eyebrow">Balance</p>
+          <h2>Session Overview</h2>
+        </div>
+
+        <div class="stats-grid">
+          <article class="stat-card">
+            <p class="stat-label">Starting Tokens</p>
+            <strong id="startingTokens">240</strong>
+          </article>
+          <article class="stat-card">
+            <p class="stat-label">Current Balance</p>
+            <strong id="tokenBalance">240</strong>
+          </article>
+          <article class="stat-card">
+            <p class="stat-label">Cost Per Spin</p>
+            <strong id="spinCost">25</strong>
+          </article>
+          <article class="stat-card">
+            <p class="stat-label">Rounds Played</p>
+            <strong id="roundCount">0</strong>
+          </article>
+        </div>
+      </section>
+
+      <div class="playfield">
+        <div class="reel-panel">
+          <div class="reels" role="group" aria-label="Slot reels">
+            <div class="reel-frame"><div class="reel" id="reel0">PROMPT</div></div>
+            <div class="reel-frame"><div class="reel" id="reel1">TOKEN</div></div>
+            <div class="reel-frame"><div class="reel" id="reel2">GPU</div></div>
+          </div>
+
+          <div class="pattern-box">
+            <div>
+              <p class="mini-label">Pattern</p>
+              <p class="pattern-title" id="patternTitle">No pattern yet</p>
+            </div>
+            <p class="pattern-copy" id="patternCopy">
+              Start a round to reveal whether the reels landed a pair, jackpot, or full miss.
+            </p>
+          </div>
+        </div>
+
+        <div class="controls-card">
+          <label class="control-field" for="playCount">
+            <span class="control-label">Spins this run</span>
+            <select id="playCount" class="play-select">
+              <option value="1">1 spin</option>
+              <option value="3">3 spins</option>
+              <option value="5">5 spins</option>
+            </select>
+          </label>
+
+          <div class="controls-actions">
+            <button id="leverButton" class="play-button" type="button">Play</button>
+            <button id="stopButton" class="stop-button" type="button" hidden>Stop After This Spin</button>
+            <button id="resetButton" class="reset-button" type="button">Reset Machine</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="status-box" aria-live="polite">
+        <p id="statusMessage">
+          Starting bankroll loaded. Each round shows the result, win category, and net token change.
+        </p>
+      </div>
+
+      <section class="dashboard" aria-label="Round details and history">
+        <article class="round-card">
+          <div class="section-heading">
+            <p class="eyebrow">Latest Round</p>
+            <h2>Round Summary</h2>
+          </div>
+
+          <div class="round-grid">
+            <div class="summary-stat">
+              <p class="mini-label">Round Start</p>
+              <p class="round-value" id="roundStart">240</p>
+            </div>
+            <div class="summary-stat">
+              <p class="mini-label">Won</p>
+              <p class="round-value gain" id="roundWon">0</p>
+            </div>
+            <div class="summary-stat">
+              <p class="mini-label">Spent</p>
+              <p class="round-value loss" id="roundSpent">0</p>
+            </div>
+            <div class="summary-stat">
+              <p class="mini-label">Net</p>
+              <p class="round-value" id="roundNet">0</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="history-card">
+          <div class="section-heading">
+            <p class="eyebrow">History</p>
+            <h2>Recent Rounds</h2>
+          </div>
+
+          <div class="history-table-wrap">
+            <table class="history-table">
+              <thead>
+                <tr>
+                  <th scope="col">Round</th>
+                  <th scope="col">Output</th>
+                  <th scope="col">Category</th>
+                  <th scope="col">Net</th>
+                </tr>
+              </thead>
+              <tbody id="activityLog">
+                <tr>
+                  <td colspan="4">No rounds played yet.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+
+        <details class="details-card" open>
+          <summary>Latest purchase</summary>
+          <div class="details-body">
+            <p class="shop-item" id="shopItem">No purchase yet</p>
+            <p class="shop-copy" id="shopCopy">
+              A post-spin purchase will appear here after the first completed round.
+            </p>
+          </div>
+        </details>
+
+        <details class="details-card">
+          <summary>How it works</summary>
+          <div class="details-body">
+            <p class="shop-copy">
+              Each spin costs tokens first, matching reels pay out, and then a random purchase
+              reduces the remaining balance.
+            </p>
+          </div>
+        </details>
+      </section>
+    </section>
+  </main>
+
+  <script type="module" src="script.js"></script>
+</body>
+</html>

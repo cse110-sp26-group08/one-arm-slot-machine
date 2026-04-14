@@ -1,0 +1,101 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Token Tug-O-War</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section class="app-card">
+      <header class="hero">
+        <p class="eyebrow">Token Tug-O-War</p>
+        <h1>Spin for tokens, then watch the AI burn through them.</h1>
+        <p class="intro">
+          A small slot machine parody where every round tracks what you spent, what you earned, and whether the reels formed a real pattern.
+        </p>
+      </header>
+
+      <section class="dashboard" aria-label="Game summary">
+        <article class="stat-panel">
+          <span class="stat-label">Starting Tokens</span>
+          <strong id="startingTokens">120</strong>
+        </article>
+        <article class="stat-panel">
+          <span class="stat-label">Current Tokens</span>
+          <strong id="tokenCount">120</strong>
+        </article>
+        <article class="stat-panel">
+          <span class="stat-label">Cost Per Play</span>
+          <strong id="spinCost">15</strong>
+        </article>
+        <article class="stat-panel">
+          <span class="stat-label">Last Result</span>
+          <strong id="resultLabel">Ready to spin</strong>
+        </article>
+      </section>
+
+      <div class="machine-wrap">
+        <div class="marquee-lights" aria-hidden="true"></div>
+        <section class="slot-machine" aria-label="Token slot machine">
+          <div class="machine-top">
+            <div class="screen">
+              <p class="screen-label">Round summary</p>
+              <p id="tauntLine" class="screen-message">Choose how many plays to run, then spin the machine.</p>
+            </div>
+
+            <div class="controls-card">
+              <label class="control-field" for="playCount">
+                <span>Plays this round</span>
+                <select id="playCount">
+                  <option value="1">1 play</option>
+                  <option value="2">2 plays</option>
+                  <option value="3">3 plays</option>
+                  <option value="5">5 plays</option>
+                </select>
+              </label>
+              <button id="spinButton" class="spin-button" type="button">Spin</button>
+              <button id="resetButton" class="ghost-button" type="button">Reset game</button>
+            </div>
+          </div>
+
+          <div class="reels" aria-live="polite">
+            <div class="reel" id="reel1">🤖</div>
+            <div class="reel" id="reel2">🪙</div>
+            <div class="reel" id="reel3">🔥</div>
+          </div>
+
+          <section class="round-grid" aria-label="Latest round details">
+            <article class="detail-panel">
+              <span class="stat-label">Pattern</span>
+              <strong id="patternLabel">No round yet</strong>
+              <p id="patternDescription" class="detail-copy">Patterns explain why each round paid out or lost tokens.</p>
+            </article>
+            <article class="detail-panel">
+              <span class="stat-label">Round Accounting</span>
+              <strong id="roundDelta">Spent 0 | Gained 0</strong>
+              <p id="roundNet" class="detail-copy">Net 0 tokens.</p>
+            </article>
+          </section>
+
+          <section class="legend-card" aria-label="Wheel symbols">
+            <h2>Wheel symbols</h2>
+            <div id="legend" class="legend"></div>
+          </section>
+        </section>
+      </div>
+
+      <section class="events-card">
+        <div class="events-header">
+          <h2>Recent rounds</h2>
+          <p class="events-copy">Newest round first. Each entry shows the pattern and the token change for that round.</p>
+        </div>
+        <ul id="logList" class="log-list" aria-live="polite"></ul>
+      </section>
+    </section>
+  </main>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
