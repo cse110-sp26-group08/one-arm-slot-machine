@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Token Extractor</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section class="hero">
+      <p class="eyebrow">Vanilla HTML + CSS + JavaScript</p>
+      <h1>AI Token Extractor</h1>
+      <p class="tagline">
+        Pull the lever, burn some tokens, and pray the machine blesses you with premium synthetic nonsense.
+      </p>
+    </section>
+
+    <section class="machine" aria-labelledby="machine-title">
+      <div class="machine-top">
+        <div>
+          <p class="panel-label">Current Balance</p>
+          <p id="token-balance" class="token-balance">120 tokens</p>
+        </div>
+        <div class="status-pill" id="temperature-pill">Hallucination risk: moderate</div>
+      </div>
+
+      <h2 id="machine-title" class="sr-only">Slot machine reels</h2>
+
+      <div class="reels" aria-live="polite">
+        <div class="reel-window"><span id="reel-1" class="reel-symbol">🤖</span></div>
+        <div class="reel-window"><span id="reel-2" class="reel-symbol">🪙</span></div>
+        <div class="reel-window"><span id="reel-3" class="reel-symbol">💸</span></div>
+      </div>
+
+      <div class="payout-board">
+        <p class="panel-label">Prompt Outcome</p>
+        <p id="result-message" class="result-message">Insert vibes. Pull lever. Monetize confusion.</p>
+      </div>
+
+      <div class="controls">
+        <button id="spin-button" class="spin-button" type="button">Spend 15 tokens</button>
+        <button id="reset-button" class="reset-button" type="button">Reset bankroll</button>
+      </div>
+
+      <ul class="rules">
+        <li>Three matching icons: +60 tokens</li>
+        <li>Two matching icons: +25 tokens</li>
+        <li>Three laptops: +90 tokens for enterprise synergy</li>
+        <li>Run out of tokens: the model suggests “try upgrading”</li>
+      </ul>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

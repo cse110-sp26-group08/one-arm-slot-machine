@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Token Drain 9000</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section class="hero">
+      <p class="eyebrow">Synthetic Luck Simulator</p>
+      <h1>Token Drain 9000</h1>
+      <p class="tagline">
+        Feed tokens to the machine. Maybe it gives you more. Maybe it uses them to train a larger machine
+        that writes worse emails.
+      </p>
+    </section>
+
+    <section class="machine" aria-label="AI satire slot machine">
+      <div class="machine-top">
+        <div class="bank-panel">
+          <span class="panel-label">Token Balance</span>
+          <strong id="token-balance">120</strong>
+        </div>
+        <div class="bank-panel">
+          <span class="panel-label">Cost Per Spin</span>
+          <strong>15</strong>
+        </div>
+      </div>
+
+      <div class="reels" aria-live="polite">
+        <div class="reel-frame"><span id="reel-1" class="reel-symbol">🤖</span></div>
+        <div class="reel-frame"><span id="reel-2" class="reel-symbol">🪙</span></div>
+        <div class="reel-frame"><span id="reel-3" class="reel-symbol">🔥</span></div>
+      </div>
+
+      <div class="controls">
+        <button id="spin-button" class="spin-button" type="button">Spend 15 Tokens</button>
+        <button id="reset-button" class="reset-button" type="button">Refill From Venture Capital</button>
+      </div>
+
+      <section class="payouts" aria-label="Payout guide">
+        <h2>Suspicious Payout Table</h2>
+        <ul>
+          <li><span>🪙 🪙 🪙</span><strong>+90 tokens</strong></li>
+          <li><span>🤖 🤖 🤖</span><strong>+65 tokens</strong></li>
+          <li><span>🔥 🔥 🔥</span><strong>+50 tokens</strong></li>
+          <li><span>🧠 🧠 🧠</span><strong>+45 tokens</strong></li>
+          <li><span>Any pair</span><strong>+20 tokens</strong></li>
+        </ul>
+      </section>
+
+      <section class="status-panel">
+        <p id="message" class="message">
+          Welcome, valued beta tester. The machine is eager to convert your budget into "engagement."
+        </p>
+        <p class="fine-print">No actual intelligence was harmed in the making of this interface.</p>
+      </section>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
