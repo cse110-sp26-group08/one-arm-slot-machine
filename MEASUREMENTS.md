@@ -41,7 +41,7 @@
 |candidate-039|2026.04.13-17.13|gpt 5.4|41|23k|23k|5:13 pm pt|3:13s|index.html	script.js	styles.css|567|yes|generic, but good quality|good code, modular, and no magic numbers|
 |candidate-040|2026.04.13-17.35|gpt 5.4|41|22k|22k|5:35|1:59s|index.html	script.js	styles.css|557|yes|everything works fine okay quality|good code, modular, and no magic numbers|
 |candidate-041|2026.04.13-17.41|gpt 5.4|41|22k|22k|5:41|1:39|index.html	script.js	style.css|561|yes|no quality issues|good code, modular, and no magic numbers|
-|candidate-042|2026.04.13-17.53|gpt 5.4|41|23k|23k|23k|23k|5:53|1:47|index.html	script.js	style.css|510|yes|generic, but good quality|good code, modular, and no magic numbers|
+|candidate-042|2026.04.13-17.53|gpt 5.4|41|23k|23k|5:53|1:47|index.html	script.js	style.css|510|yes|generic, but good quality|good code, modular, and no magic numbers|
 |candidate-043|2026.04.13-17.57|gpt 5.4|41|21k|21k|5:57|2:04s|index.html	script.js	style.css|607|yes|everything seems to work fine, no quality issues|good code, modular, and no magic numbers|
 | candidate-044 | | | | | | | | | | | | |
 | candidate-045 | | | | | | | | | | | | |
