@@ -9,6 +9,7 @@ import {
   renderReels,
   setMessage,
   setPattern,
+  setupCollapsiblePanels,
   setSpinning,
   updateDashboard
 } from "./ui.js";
@@ -39,6 +40,13 @@ function refreshUI() {
   renderHistory(ui, state.rounds);
 }
 
+function getBetPerSpin() {
+  return Math.max(
+    GAME_CONFIG.baseSpinCost,
+    Math.min(GAME_CONFIG.maxSpinCost, Number(ui.betPerSpin.value) || GAME_CONFIG.baseSpinCost)
+  );
+}
+
 async function animateSingleReel(index) {
   const reel = ui.reelElements[index];
 
@@ -60,12 +68,13 @@ async function animateSingleReel(index) {
 
 async function playRound() {
   const roundResults = [];
+  const betPerSpin = getBetPerSpin();
 
   for (let index = 0; index < GAME_CONFIG.reels; index += 1) {
     roundResults.push(await animateSingleReel(index));
   }
 
-  const round = scoreRound(roundResults);
+  const round = scoreRound(roundResults, betPerSpin);
   const roundNumber = state.rounds.length + 1;
 
   state.balance += round.gained;
@@ -94,7 +103,8 @@ async function spinMultipleRounds() {
   }
 
   const requestedSpins = Math.max(1, Number(ui.spinCount.value) || 1);
-  const maxAffordableSpins = Math.floor(state.balance / GAME_CONFIG.spinCost);
+  const betPerSpin = getBetPerSpin();
+  const maxAffordableSpins = Math.floor(state.balance / betPerSpin);
   const spinsToRun = Math.min(requestedSpins, maxAffordableSpins);
 
   if (spinsToRun === 0) {
@@ -119,11 +129,11 @@ async function spinMultipleRounds() {
       break;
     }
 
-    state.balance -= GAME_CONFIG.spinCost;
-    state.totalSpent += GAME_CONFIG.spinCost;
-    state.totalNet -= GAME_CONFIG.spinCost;
+    state.balance -= betPerSpin;
+    state.totalSpent += betPerSpin;
+    state.totalNet -= betPerSpin;
 
-    setMessage(ui, `Running spin ${roundIndex + 1} of ${spinsToRun}...`);
+    setMessage(ui, `Running spin ${roundIndex + 1} of ${spinsToRun} at ${betPerSpin} tokens...`);
     setPattern(ui, {
       key: "spinning",
       label: "Spinning",
@@ -157,7 +167,7 @@ function resetGame() {
   setPattern(ui, {
     key: "ready",
     label: "Waiting for a spin",
-    detail: "Three matching symbols pay the most. Any pair returns 20 tokens."
+    detail: "Three matching symbols pay the most. All payouts scale with your selected bet."
   });
   setMessage(ui, DEFAULT_MESSAGE);
   setSpinning(ui, false);
@@ -176,5 +186,12 @@ ui.spinCount.addEventListener("input", () => {
   ui.spinCount.value = String(normalized);
   updateDashboard(ui, state);
 });
+ui.betPerSpin.addEventListener("input", () => {
+  const steps = Math.round((Number(ui.betPerSpin.value) || GAME_CONFIG.baseSpinCost) / GAME_CONFIG.baseSpinCost);
+  const normalized = Math.max(1, Math.min(GAME_CONFIG.maxSpinCost / GAME_CONFIG.baseSpinCost, steps)) * GAME_CONFIG.baseSpinCost;
+  ui.betPerSpin.value = String(normalized);
+  updateDashboard(ui, state);
+});
 
+setupCollapsiblePanels(ui);
 resetGame();

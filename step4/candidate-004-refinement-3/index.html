@@ -1,0 +1,166 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Token Extractor</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section class="machine-card" aria-labelledby="title">
+      <div class="layout-grid">
+        <aside class="sidebar">
+          <p class="eyebrow">Arcade Lab</p>
+          <h1 id="title">AI Token Extractor</h1>
+          <p class="subtitle">
+            Spend tokens, spin the reels, and track exactly what each round cost or returned.
+          </p>
+
+          <section class="overview-panel panel" aria-labelledby="overviewTitle">
+            <div class="panel-header">
+              <h2 id="overviewTitle">Session Overview</h2>
+              <span class="panel-note">Readable at a glance</span>
+            </div>
+            <div class="overview-grid">
+              <article class="stat">
+                <span class="stat-label">Starting Tokens</span>
+                <strong id="startingBalance">30</strong>
+              </article>
+              <article class="stat stat-primary">
+                <span class="stat-label">Current Wallet</span>
+                <strong id="tokenBalance">30</strong>
+              </article>
+              <article class="stat">
+                <span class="stat-label">Rounds Played</span>
+                <strong id="roundCount">0</strong>
+              </article>
+              <article class="stat">
+                <span class="stat-label">Spin Cost</span>
+                <strong><span id="spinCost">3</span> / spin</strong>
+              </article>
+            </div>
+          </section>
+
+          <section class="session-grid" aria-label="Round details">
+            <article class="panel panel-accent">
+              <h2>Last Round</h2>
+              <dl class="round-stats">
+                <div>
+                  <dt>Spent</dt>
+                  <dd id="roundSpent">0</dd>
+                </div>
+                <div>
+                  <dt>Gained</dt>
+                  <dd id="roundGained">0</dd>
+                </div>
+                <div>
+                  <dt>Net</dt>
+                  <dd id="roundNet">0</dd>
+                </div>
+              </dl>
+            </article>
+          </section>
+
+          <p id="message" class="message" role="status" aria-live="polite">
+            Session ready. Each spin costs 3 tokens.
+          </p>
+        </aside>
+
+        <div class="main-column">
+          <section class="reels-panel" aria-label="Slot machine reels">
+            <div class="reels" id="reels">
+              <div class="reel" data-reel>&#129302;</div>
+              <div class="reel" data-reel>&#129689;</div>
+              <div class="reel" data-reel>&#129504;</div>
+            </div>
+            <div class="pattern-banner">
+              <span class="pattern-label">Pattern</span>
+              <strong id="patternSummary">No winning pattern yet.</strong>
+            </div>
+          </section>
+
+          <div class="play-area">
+            <div class="play-inputs">
+              <label class="spin-count-field" for="spinCountInput">
+                <span class="spin-count-label">Spins this play</span>
+                <input id="spinCountInput" type="number" min="1" value="1" inputmode="numeric">
+              </label>
+              <label class="spin-count-field" for="spinWagerInput">
+                <span class="spin-count-label">Tokens per spin</span>
+                <input id="spinWagerInput" type="number" min="3" step="3" value="3" inputmode="numeric">
+              </label>
+            </div>
+            <div class="controls controls-centered">
+              <button id="spinButton" class="spin-button" type="button">Play</button>
+              <button id="stopButton" class="ghost-button" type="button" hidden>Stop After This Spin</button>
+            </div>
+            <div class="controls controls-secondary">
+              <button id="resetButton" class="ghost-button" type="button">Reset Session</button>
+            </div>
+            <p class="play-note">Choose one or more spins, then set a bigger wager when you want higher stakes.</p>
+          </div>
+
+          <section class="panel history-panel" aria-labelledby="historyTitle">
+            <div class="panel-header">
+              <h2 id="historyTitle">Round History</h2>
+              <span class="panel-note">Most recent first</span>
+            </div>
+            <div class="history-table-wrap">
+              <table class="history-table">
+                <thead>
+                  <tr>
+                    <th scope="col">Output</th>
+                    <th scope="col">Category</th>
+                    <th scope="col">Net Tokens</th>
+                  </tr>
+                </thead>
+                <tbody id="historyList">
+                  <tr>
+                    <td colspan="3" class="history-empty">No rounds yet.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <div class="collapsible-stack">
+            <details class="panel collapsible">
+              <summary>
+                <span>Pattern Guide</span>
+                <span class="panel-note">Expand when needed</span>
+              </summary>
+              <div class="collapsible-content">
+                <ul class="pattern-list" id="patternList">
+                  <li>Three of a kind: +15 tokens per base wager</li>
+                  <li>Two of a kind: +5 tokens per base wager</li>
+                  <li>No match: +0 tokens</li>
+                </ul>
+              </div>
+            </details>
+
+            <details class="panel collapsible paytable" aria-labelledby="paytableTitle">
+              <summary>
+                <span id="paytableTitle">Symbols</span>
+                <span class="panel-note">Expand when needed</span>
+              </summary>
+              <div class="collapsible-content">
+                <ul>
+                  <li><span>&#129302;</span> Bot</li>
+                  <li><span>&#129689;</span> Lab vial</li>
+                  <li><span>&#129504;</span> Brain</li>
+                  <li><span>&#128293;</span> Fire</li>
+                  <li><span>&#128201;</span> Chart</li>
+                  <li><span>&#128190;</span> Disk</li>
+                </ul>
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script type="module" src="script.js"></script>
+</body>
+</html>

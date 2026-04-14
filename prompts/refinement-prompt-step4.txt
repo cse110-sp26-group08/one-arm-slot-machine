@@ -1,0 +1,5 @@
+1. Add consistency to font size
+2. Add better animations for expanding/contracting widgets
+3. add hover effects
+4. Resize the elements as rn they are so big that the play button is not visible on first load (without scrolling). You can also send the Session summary/token summary to the left but keep in mind that the website should be responsive
+5. Allow user to spend more tokens per spin

@@ -28,7 +28,12 @@ const state = {
   stopRequested: false,
   activeTimers: [],
   activeIntervals: [],
+  currentSpinCost: GAME_CONFIG.spinCost,
 };
+
+function formatTokenCount(value) {
+  return `${value} token${value === 1 ? "" : "s"}`;
+}
 
 function randomSymbol() {
   return SYMBOLS[Math.floor(Math.random() * SYMBOLS.length)];
@@ -42,7 +47,7 @@ function createInitialRoundSummary() {
     patternLabel: "No winning pattern yet.",
     result: ui.reels.map((reel) => reel.textContent),
     winningIndices: [],
-    message: "Session ready. Each spin costs 3 tokens.",
+    message: `Session ready. Each spin costs ${formatTokenCount(GAME_CONFIG.spinCost)}.`,
   };
 }
 
@@ -53,6 +58,18 @@ function getRequestedSpinCount() {
   }
 
   return parsedValue;
+}
+
+function getRequestedSpinCost() {
+  const parsedValue = Number.parseInt(ui.spinWagerInput.value, 10);
+  if (Number.isNaN(parsedValue) || parsedValue < GAME_CONFIG.spinCost) {
+    return GAME_CONFIG.spinCost;
+  }
+
+  return Math.max(
+    GAME_CONFIG.spinCost,
+    Math.floor(parsedValue / GAME_CONFIG.spinCost) * GAME_CONFIG.spinCost,
+  );
 }
 
 function scheduleTimer(callback, delay) {
@@ -81,6 +98,7 @@ function formatQueuedSpinMessage() {
 }
 
 function analyzeResult(result) {
+  const payoutMultiplier = state.currentSpinCost / GAME_CONFIG.spinCost;
   const counts = result.reduce((map, symbol, index) => {
     const key = symbol.icon;
     if (!map[key]) {
@@ -98,20 +116,24 @@ function analyzeResult(result) {
   if (topGroup.count === 3) {
     return {
       categoryLabel: "Jackpot",
-      gained: GAME_CONFIG.payouts.jackpot,
+      gained: GAME_CONFIG.payouts.jackpot * payoutMultiplier,
       patternLabel: `Three ${topGroup.symbol.icon} in a row`,
       winningIndices: topGroup.indices,
-      message: `Jackpot. Three matching symbols returned ${GAME_CONFIG.payouts.jackpot} tokens.`,
+      message: `Jackpot. Three matching symbols returned ${formatTokenCount(
+        GAME_CONFIG.payouts.jackpot * payoutMultiplier,
+      )}.`,
     };
   }
 
   if (topGroup.count === 2) {
     return {
       categoryLabel: "Pair Win",
-      gained: GAME_CONFIG.payouts.pair,
+      gained: GAME_CONFIG.payouts.pair * payoutMultiplier,
       patternLabel: `Pair of ${topGroup.symbol.icon}`,
       winningIndices: topGroup.indices,
-      message: `Pair found. The machine paid back ${GAME_CONFIG.payouts.pair} tokens.`,
+      message: `Pair found. The machine paid back ${formatTokenCount(
+        GAME_CONFIG.payouts.pair * payoutMultiplier,
+      )}.`,
     };
   }
 
@@ -155,9 +177,9 @@ function finishSpin(result) {
   state.isSpinning = false;
 
   const round = {
-    spent: GAME_CONFIG.spinCost,
+    spent: state.currentSpinCost,
     gained: outcome.gained,
-    net: outcome.gained - GAME_CONFIG.spinCost,
+    net: outcome.gained - state.currentSpinCost,
     categoryLabel: outcome.categoryLabel,
     patternLabel: outcome.patternLabel,
     result: result.map((symbol) => symbol.icon),
@@ -168,13 +190,13 @@ function finishSpin(result) {
   storeRound(round);
   applyRound(round);
 
-  if (state.balance < GAME_CONFIG.spinCost) {
+  if (state.balance < state.currentSpinCost) {
     setMessage(ui, `${outcome.message} You do not have enough tokens for another spin.`);
   }
 
   updateStatus(ui, state);
 
-  if (state.queuedSpins > 0 && !state.stopRequested && state.balance >= GAME_CONFIG.spinCost) {
+  if (state.queuedSpins > 0 && !state.stopRequested && state.balance >= state.currentSpinCost) {
     scheduleTimer(() => spin({ fromQueue: true }), 250);
     return;
   }
@@ -217,24 +239,31 @@ function animateSpin(result) {
 }
 
 function spin({ fromQueue = false } = {}) {
-  if (state.isSpinning || state.balance < GAME_CONFIG.spinCost) {
+  if (state.isSpinning) {
     return;
   }
 
   if (!fromQueue) {
     state.queuedSpins = Math.max(0, getRequestedSpinCount() - 1);
     state.stopRequested = false;
+    state.currentSpinCost = getRequestedSpinCost();
   } else if (state.queuedSpins > 0) {
     state.queuedSpins -= 1;
   }
 
+  if (state.balance < state.currentSpinCost) {
+    updateStatus(ui, state);
+    setMessage(ui, `You need ${formatTokenCount(state.currentSpinCost)} to play this wager.`);
+    return;
+  }
+
   state.isSpinning = true;
-  state.balance -= GAME_CONFIG.spinCost;
+  state.balance -= state.currentSpinCost;
   clearWinState(ui);
   updateStatus(ui, state);
-  setMessage(ui, `Spinning the reels...${formatQueuedSpinMessage()}`);
+  setMessage(ui, `Spinning the reels for ${formatTokenCount(state.currentSpinCost)}...${formatQueuedSpinMessage()}`);
   renderPattern(ui, { patternLabel: "Checking for patterns..." });
-  renderRoundSummary(ui, { spent: GAME_CONFIG.spinCost, gained: 0, net: -GAME_CONFIG.spinCost });
+  renderRoundSummary(ui, { spent: state.currentSpinCost, gained: 0, net: -state.currentSpinCost });
 
   const result = ui.reels.map(() => randomSymbol());
   animateSpin(result);
@@ -258,6 +287,7 @@ function resetGame() {
   state.history = [];
   state.queuedSpins = 0;
   state.stopRequested = false;
+  state.currentSpinCost = GAME_CONFIG.spinCost;
 
   clearWinState(ui);
   ui.reels.forEach((reel, index) => {
@@ -279,4 +309,10 @@ ui.stopButton.addEventListener("click", stopQueuedSpins);
 ui.resetButton.addEventListener("click", resetGame);
 ui.spinCountInput.addEventListener("change", () => {
   ui.spinCountInput.value = String(getRequestedSpinCount());
+});
+ui.spinWagerInput.addEventListener("change", () => {
+  const nextSpinCost = getRequestedSpinCost();
+  ui.spinWagerInput.value = String(nextSpinCost);
+  state.currentSpinCost = nextSpinCost;
+  updateStatus(ui, state);
 });

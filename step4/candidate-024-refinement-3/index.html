@@ -18,37 +18,38 @@
     </section>
 
     <section class="machine" aria-label="AI satire slot machine">
-      <section class="stats-panel" aria-label="Balance summary">
-        <div class="section-heading">
-          <p class="section-kicker">Balance</p>
-          <h2>Token Summary</h2>
-        </div>
+      <section class="machine-top">
+        <section class="stats-panel" aria-label="Balance summary">
+          <div class="section-heading">
+            <p class="section-kicker">Balance</p>
+            <h2>Token Summary</h2>
+          </div>
 
-        <div class="stats-grid">
-          <article class="stat-card stat-card-primary">
-            <span class="panel-label">Current Balance</span>
-            <strong id="token-balance">120</strong>
-          </article>
-          <article class="stat-card">
-            <span class="panel-label">Starting Balance</span>
-            <strong id="starting-balance">120</strong>
-          </article>
-          <article class="stat-card">
-            <span class="panel-label">Total Spent</span>
-            <strong id="total-spent">0</strong>
-          </article>
-          <article class="stat-card">
-            <span class="panel-label">Total Gained</span>
-            <strong id="total-gained">0</strong>
-          </article>
-          <article class="stat-card stat-card-accent">
-            <span class="panel-label">Overall Net</span>
-            <strong id="total-net">0</strong>
-          </article>
-        </div>
-      </section>
+          <div class="stats-grid">
+            <article class="stat-card stat-card-primary">
+              <span class="panel-label">Current Balance</span>
+              <strong id="token-balance">120</strong>
+            </article>
+            <article class="stat-card">
+              <span class="panel-label">Starting Balance</span>
+              <strong id="starting-balance">120</strong>
+            </article>
+            <article class="stat-card">
+              <span class="panel-label">Total Spent</span>
+              <strong id="total-spent">0</strong>
+            </article>
+            <article class="stat-card">
+              <span class="panel-label">Total Gained</span>
+              <strong id="total-gained">0</strong>
+            </article>
+            <article class="stat-card stat-card-accent">
+              <span class="panel-label">Overall Net</span>
+              <strong id="total-net">0</strong>
+            </article>
+          </div>
+        </section>
 
-      <section class="play-panel" aria-label="Slot machine controls">
+        <section class="play-panel" aria-label="Slot machine controls">
         <div class="reels" aria-live="polite">
           <div class="reel-frame"><span id="reel-1" class="reel-symbol" data-reel aria-label="Bot">🤖</span></div>
           <div class="reel-frame"><span id="reel-2" class="reel-symbol" data-reel aria-label="Coin">🪙</span></div>
@@ -59,7 +60,7 @@
           <div>
             <p class="panel-label">Detected Pattern</p>
             <h2 id="pattern-name">Waiting for a spin</h2>
-            <p id="pattern-detail" class="pattern-detail">Three matching symbols pay the most. Any pair returns 20 tokens.</p>
+            <p id="pattern-detail" class="pattern-detail">Three matching symbols pay the most. All payouts scale with your selected bet.</p>
           </div>
         </section>
 
@@ -67,7 +68,12 @@
           <div class="play-config">
             <label class="spin-count-label" for="spin-count">Spins to run</label>
             <input id="spin-count" class="spin-count-input" type="number" min="1" max="10" value="1">
-            <p class="play-note">15 tokens per spin</p>
+          </div>
+
+          <div class="play-config">
+            <label class="spin-count-label" for="bet-per-spin">Tokens per spin</label>
+            <input id="bet-per-spin" class="spin-count-input" type="number" min="15" max="75" step="15" value="15">
+            <p id="play-note" class="play-note">1 spin at 15 tokens each. Payouts scale with your bet.</p>
           </div>
 
           <div class="controls">
@@ -76,6 +82,7 @@
             <button id="reset-button" class="reset-button" type="button">Reset Balance</button>
           </div>
         </div>
+        </section>
       </section>
 
       <section class="details-grid">

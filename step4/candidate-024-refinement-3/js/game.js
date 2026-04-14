@@ -61,10 +61,11 @@ export function detectPattern(results) {
 /**
  * Build per-round accounting details for a single spin.
  */
-export function scoreRound(results) {
+export function scoreRound(results, spinCost = GAME_CONFIG.baseSpinCost) {
   const pattern = detectPattern(results);
-  const spent = GAME_CONFIG.spinCost;
-  const gained = pattern.payout;
+  const spent = Number(spinCost);
+  const payoutMultiplier = spent / GAME_CONFIG.baseSpinCost;
+  const gained = Math.round(pattern.payout * payoutMultiplier);
 
   return {
     results,

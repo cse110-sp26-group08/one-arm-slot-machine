@@ -6,6 +6,7 @@ import { GAME_CONFIG } from "./config.js";
 export function createUI() {
   return {
     machine: document.querySelector(".machine"),
+    collapsiblePanels: Array.from(document.querySelectorAll(".collapsible-panel")),
     reelFrames: Array.from(document.querySelectorAll(".reel-frame")),
     reelElements: Array.from(document.querySelectorAll("[data-reel]")),
     tokenBalance: document.getElementById("token-balance"),
@@ -17,6 +18,8 @@ export function createUI() {
     patternName: document.getElementById("pattern-name"),
     patternDetail: document.getElementById("pattern-detail"),
     spinCount: document.getElementById("spin-count"),
+    betPerSpin: document.getElementById("bet-per-spin"),
+    playNote: document.getElementById("play-note"),
     spinButton: document.getElementById("spin-button"),
     stopButton: document.getElementById("stop-button"),
     resetButton: document.getElementById("reset-button"),
@@ -61,7 +64,9 @@ export function setSpinning(ui, spinning) {
 export function updateDashboard(ui, state) {
   const requestedSpins = Number(ui.spinCount.value);
   const normalizedSpins = Number.isFinite(requestedSpins) ? requestedSpins : 1;
-  const playLabel = normalizedSpins === 1 ? "Play 1 Spin" : `Play ${normalizedSpins} Spins`;
+  const betPerSpin = Number(ui.betPerSpin.value) || GAME_CONFIG.baseSpinCost;
+  const totalCost = normalizedSpins * betPerSpin;
+  const playLabel = normalizedSpins === 1 ? `Play 1 Spin (${betPerSpin})` : `Play ${normalizedSpins} Spins (${totalCost})`;
 
   ui.tokenBalance.textContent = String(state.balance);
   ui.startingBalance.textContent = String(GAME_CONFIG.startingTokens);
@@ -69,13 +74,16 @@ export function updateDashboard(ui, state) {
   ui.totalGained.textContent = String(state.totalGained);
   ui.totalNet.textContent = `${state.totalNet >= 0 ? "+" : ""}${state.totalNet}`;
   ui.spinButton.textContent = playLabel;
+  ui.playNote.textContent = `${normalizedSpins} spin${normalizedSpins === 1 ? "" : "s"} at ${betPerSpin} tokens each. Payouts scale with your bet.`;
 
   if (!state.isSpinning) {
-    ui.spinButton.disabled = state.balance < GAME_CONFIG.spinCost;
+    ui.spinButton.disabled = state.balance < betPerSpin;
     ui.spinCount.disabled = false;
+    ui.betPerSpin.disabled = false;
   } else {
     ui.spinButton.disabled = true;
     ui.spinCount.disabled = false;
+    ui.betPerSpin.disabled = true;
   }
 }
 
@@ -140,4 +148,34 @@ export function pulseMachine(ui, tone) {
   window.setTimeout(() => {
     ui.machine.classList.remove(tone);
   }, 600);
+}
+
+export function setupCollapsiblePanels(ui) {
+  ui.collapsiblePanels.forEach((panel) => {
+    const summary = panel.querySelector("summary");
+    const content = panel.querySelector(".collapsible-content");
+
+    if (!summary || !content) {
+      return;
+    }
+
+    const syncState = () => {
+      panel.classList.toggle("is-collapsed", !panel.open);
+      content.style.maxHeight = panel.open ? `${content.scrollHeight}px` : "0px";
+    };
+
+    syncState();
+
+    summary.addEventListener("click", (event) => {
+      event.preventDefault();
+      panel.open = !panel.open;
+      syncState();
+    });
+
+    window.addEventListener("resize", () => {
+      if (panel.open) {
+        content.style.maxHeight = `${content.scrollHeight}px`;
+      }
+    });
+  });
 }

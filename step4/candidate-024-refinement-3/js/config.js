@@ -2,7 +2,8 @@
  * Central game configuration so UI, game logic, and documentation all point to one source of truth.
  */
 export const GAME_CONFIG = {
-  spinCost: 15,
+  baseSpinCost: 15,
+  maxSpinCost: 75,
   startingTokens: 120,
   reels: 3,
   symbols: [

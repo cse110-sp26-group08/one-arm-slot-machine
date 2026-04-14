@@ -15,6 +15,13 @@
   --shadow: rgba(7, 20, 28, 0.28);
   --border: rgba(255, 255, 255, 0.22);
   --panel-border: rgba(24, 37, 46, 0.1);
+  --font-xs: 0.78rem;
+  --font-sm: 0.92rem;
+  --font-md: 1rem;
+  --font-lg: 1.1rem;
+  --font-xl: clamp(1.3rem, 2vw, 1.7rem);
+  --radius-panel: 22px;
+  --ease-spring: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 *,
@@ -35,9 +42,9 @@ body {
 }
 
 .app-shell {
-  width: min(1120px, calc(100% - 2rem));
+  width: min(1180px, calc(100% - 2rem));
   margin: 0 auto;
-  padding: 2.5rem 0 3rem;
+  padding: 1.6rem 0 2.5rem;
 }
 
 .hero {
@@ -53,7 +60,7 @@ body {
   margin: 0;
   text-transform: uppercase;
   letter-spacing: 0.16em;
-  font-size: 0.78rem;
+  font-size: var(--font-xs);
   color: var(--muted);
 }
 
@@ -72,14 +79,14 @@ body {
 .tagline {
   width: min(680px, 100%);
   margin: 0 auto;
-  font-size: 1.08rem;
+  font-size: var(--font-md);
   line-height: 1.65;
 }
 
 .machine {
   display: grid;
   gap: 1.25rem;
-  padding: 1.4rem;
+  padding: 1.15rem;
   border: 1px solid var(--border);
   border-radius: 28px;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.08));
@@ -88,12 +95,19 @@ body {
   animation: fade-up 850ms ease;
 }
 
+.machine-top {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.95fr) minmax(0, 1.4fr);
+  gap: 1rem;
+  align-items: start;
+}
+
 .stats-panel,
 .play-panel,
 .pattern-panel,
 .collapsible-panel,
 .status-panel {
-  border-radius: 22px;
+  border-radius: var(--radius-panel);
   background: var(--panel);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5);
 }
@@ -113,30 +127,37 @@ body {
 .section-heading h2,
 .pattern-panel h2 {
   margin: 0.2rem 0 0;
-  font-size: clamp(1.45rem, 2.6vw, 2rem);
+  font-size: var(--font-xl);
   line-height: 1.1;
 }
 
 .stats-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 0.9rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
 }
 
 .stat-card {
-  min-height: 118px;
+  min-height: 92px;
   display: grid;
   align-content: start;
-  gap: 0.55rem;
-  padding: 1rem 1.05rem;
+  gap: 0.45rem;
+  padding: 0.9rem 1rem;
   border: 1px solid var(--panel-border);
   border-radius: 18px;
   background: var(--panel-strong);
+  transition: transform 220ms var(--ease-spring), box-shadow 220ms ease, border-color 220ms ease;
 }
 
 .stat-card strong {
-  font-size: clamp(1.7rem, 3vw, 2.45rem);
+  font-size: clamp(1.45rem, 2.5vw, 2.1rem);
   line-height: 1;
+}
+
+.stat-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 28px rgba(14, 20, 28, 0.08);
+  border-color: rgba(42, 157, 143, 0.18);
 }
 
 .stat-card-primary {
@@ -150,18 +171,18 @@ body {
 
 .play-panel {
   display: grid;
-  gap: 1rem;
+  gap: 0.85rem;
 }
 
 .reels {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1rem;
+  gap: 0.8rem;
 }
 
 .reel-frame {
   position: relative;
-  min-height: 180px;
+  min-height: 146px;
   display: grid;
   place-items: center;
   overflow: hidden;
@@ -171,7 +192,7 @@ body {
   box-shadow:
     inset 0 -8px 18px rgba(217, 119, 6, 0.12),
     0 14px 26px rgba(14, 20, 28, 0.2);
-  transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+  transition: border-color 220ms ease, box-shadow 220ms ease, transform 220ms var(--ease-spring);
 }
 
 .reel-frame::before,
@@ -202,10 +223,17 @@ body {
   transform: translateY(-2px);
 }
 
+.reel-frame:hover {
+  transform: translateY(-2px) scale(1.01);
+  box-shadow:
+    inset 0 -8px 18px rgba(217, 119, 6, 0.14),
+    0 18px 30px rgba(14, 20, 28, 0.22);
+}
+
 .reel-symbol {
-  font-size: clamp(3.7rem, 10vw, 5.5rem);
+  font-size: clamp(3.1rem, 8vw, 4.4rem);
   transform-origin: center;
-  transition: transform 180ms ease;
+  transition: transform 180ms ease, filter 180ms ease;
 }
 
 .reel-symbol.spinning {
@@ -220,23 +248,25 @@ body {
 .play-note {
   margin: 0;
   color: var(--muted);
+  font-size: var(--font-sm);
   line-height: 1.55;
 }
 
 .play-controls {
   display: grid;
-  justify-items: center;
-  gap: 1rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: end;
+  gap: 0.9rem;
 }
 
 .play-config {
-  width: min(240px, 100%);
+  width: 100%;
   display: grid;
   gap: 0.45rem;
 }
 
 .spin-count-label {
-  font-size: 0.95rem;
+  font-size: var(--font-sm);
   font-weight: 700;
 }
 
@@ -248,30 +278,38 @@ body {
   background: var(--panel-strong);
   color: var(--text);
   font: inherit;
-  font-size: 1.05rem;
+  font-size: var(--font-md);
   font-weight: 700;
   text-align: center;
+  transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+}
+
+.spin-count-input:hover,
+.spin-count-input:focus {
+  border-color: rgba(42, 157, 143, 0.5);
+  box-shadow: 0 0 0 4px rgba(42, 157, 143, 0.12);
+  outline: none;
 }
 
 .controls {
   width: 100%;
   display: grid;
-  justify-items: center;
-  gap: 0.8rem;
+  gap: 0.65rem;
 }
 
 button {
   border: 0;
   border-radius: 999px;
-  padding: 0.95rem 1.3rem;
+  padding: 0.85rem 1.2rem;
   font: inherit;
   font-weight: 800;
   cursor: pointer;
-  transition: transform 180ms ease, box-shadow 180ms ease, opacity 180ms ease;
+  transition: transform 220ms var(--ease-spring), box-shadow 220ms ease, opacity 180ms ease, filter 180ms ease;
 }
 
 button:hover {
-  transform: translateY(-2px);
+  transform: translateY(-2px) scale(1.01);
+  filter: saturate(1.05);
 }
 
 button:disabled {
@@ -281,9 +319,9 @@ button:disabled {
 }
 
 .spin-button {
-  width: min(420px, 100%);
-  min-height: 64px;
-  font-size: 1.05rem;
+  width: 100%;
+  min-height: 56px;
+  font-size: var(--font-md);
   background: linear-gradient(180deg, var(--accent), var(--accent-deep));
   color: #fff;
   box-shadow: 0 14px 30px rgba(180, 83, 9, 0.34);
@@ -291,7 +329,7 @@ button:disabled {
 
 .stop-button,
 .reset-button {
-  width: min(260px, 100%);
+  width: 100%;
 }
 
 .stop-button {
@@ -312,6 +350,14 @@ button:disabled {
 
 .collapsible-panel {
   overflow: hidden;
+  border: 1px solid rgba(24, 37, 46, 0.08);
+  transition: transform 220ms var(--ease-spring), box-shadow 220ms ease, border-color 220ms ease;
+}
+
+.collapsible-panel:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 32px rgba(14, 20, 28, 0.08);
+  border-color: rgba(42, 157, 143, 0.18);
 }
 
 .collapsible-panel summary {
@@ -322,7 +368,7 @@ button:disabled {
   padding: 1rem 1.2rem;
   cursor: pointer;
   list-style: none;
-  font-size: 1.1rem;
+  font-size: var(--font-lg);
   font-weight: 800;
 }
 
@@ -331,7 +377,7 @@ button:disabled {
 }
 
 .summary-hint {
-  font-size: 0.82rem;
+  font-size: var(--font-xs);
   text-transform: uppercase;
   letter-spacing: 0.12em;
   color: var(--muted);
@@ -357,6 +403,23 @@ button:disabled {
 
 .collapsible-content {
   padding-top: 0;
+  overflow: hidden;
+  max-height: 1000px;
+  opacity: 1;
+  transform: translateY(0);
+  transition:
+    max-height 300ms var(--ease-spring),
+    opacity 220ms ease,
+    transform 300ms var(--ease-spring),
+    padding 300ms var(--ease-spring);
+}
+
+.collapsible-panel.is-collapsed .collapsible-content {
+  max-height: 0;
+  opacity: 0;
+  transform: translateY(-8px);
+  padding-top: 0;
+  padding-bottom: 0;
 }
 
 .payout-list {
@@ -384,7 +447,7 @@ button:disabled {
 .history-table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 0.98rem;
+  font-size: var(--font-sm);
 }
 
 .history-table th,
@@ -399,7 +462,7 @@ button:disabled {
   position: sticky;
   top: 0;
   background: var(--panel);
-  font-size: 0.82rem;
+  font-size: var(--font-xs);
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: var(--muted);
@@ -429,7 +492,7 @@ button:disabled {
   align-items: center;
   padding: 0.35rem 0.7rem;
   border-radius: 999px;
-  font-size: 0.9rem;
+  font-size: var(--font-sm);
   font-weight: 700;
 }
 
@@ -464,7 +527,7 @@ button:disabled {
 
 .message {
   margin: 0;
-  font-size: 1.08rem;
+  font-size: var(--font-md);
   line-height: 1.55;
 }
 
@@ -498,25 +561,26 @@ button:disabled {
 }
 
 @media (max-width: 920px) {
-  .stats-grid,
+  .machine-top,
   .details-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: 1fr;
   }
 
-  .stat-card-primary {
-    grid-column: span 2;
+  .play-controls {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
 @media (max-width: 720px) {
   .app-shell {
     width: min(100% - 1.25rem, 720px);
-    padding-top: 1.5rem;
+    padding-top: 1.1rem;
   }
 
   .stats-grid,
   .reels,
-  .details-grid {
+  .details-grid,
+  .play-controls {
     grid-template-columns: 1fr;
   }
 
@@ -525,7 +589,7 @@ button:disabled {
   }
 
   .reel-frame {
-    min-height: 130px;
+    min-height: 120px;
   }
 
   .history-table {

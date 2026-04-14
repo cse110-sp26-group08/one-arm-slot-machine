@@ -5,6 +5,8 @@
  */
 export function createUi() {
   return {
+    root: document.documentElement,
+    body: document.body,
     reels: [...document.querySelectorAll("[data-reel]")],
     tokenBalance: document.getElementById("tokenBalance"),
     startingBalance: document.getElementById("startingBalance"),
@@ -19,7 +21,9 @@ export function createUi() {
     spinButton: document.getElementById("spinButton"),
     stopButton: document.getElementById("stopButton"),
     resetButton: document.getElementById("resetButton"),
+    themeToggle: document.getElementById("themeToggle"),
     spinCountInput: document.getElementById("spinCountInput"),
+    spinWagerInput: document.getElementById("spinWagerInput"),
   };
 }
 
@@ -35,11 +39,14 @@ export function updateStaticLabels(ui) {
 export function updateStatus(ui, state) {
   ui.tokenBalance.textContent = String(state.balance);
   ui.roundCount.textContent = String(state.roundsPlayed);
-  const canAffordSpin = state.balance >= GAME_CONFIG.spinCost;
+  const canAffordSpin = state.balance >= state.currentSpinCost;
+  ui.spinCost.textContent = String(state.currentSpinCost);
   ui.spinButton.disabled = state.isSpinning || !canAffordSpin;
   ui.stopButton.hidden = !state.isSpinning || state.queuedSpins <= 0;
   ui.stopButton.disabled = !state.isSpinning || state.stopRequested || state.queuedSpins <= 0;
   ui.spinCountInput.disabled = state.isSpinning;
+  ui.spinWagerInput.disabled = state.isSpinning;
+  ui.body.classList.toggle("spin-active", state.isSpinning);
 }
 
 export function setMessage(ui, text) {
@@ -107,4 +114,10 @@ export function renderHistory(ui, history) {
       `;
     })
     .join("");
+}
+
+export function applyTheme(ui, theme) {
+  ui.root.dataset.theme = theme;
+  ui.themeToggle.textContent = theme === "dark" ? "Light Mode" : "Dark Mode";
+  ui.themeToggle.setAttribute("aria-pressed", String(theme === "dark"));
 }
